@@ -50,8 +50,8 @@
     <!-- 库位展示区域 -->
     <div>
       <span v-for="(storageLocation,index) in storageLocations">
-        <!-- 电缆库位 storageLocationName  -->
-          <span v-if="storageLocation.storageLocationName == '电缆库位'">
+        <!-- 库位 storageLocationName  -->
+          <span v-if="storageLocation.storageLocationName == '库位'">
             <div :id="storageLocation.id" class="stordiv">
              <div class="stor">
                 {{storageLocation.storageLocationName}}
@@ -70,7 +70,7 @@
           </div>
           </span>
 
-        <span v-if="storageLocation.storageLocationName != '电缆库位'">
+        <span v-if="storageLocation.storageLocationName != '库位'">
         <!-- 空闲库位容量 0 为空闲状态-->
           <span v-if="storageLocation.percentage == 0 || storageLocation.percentage < 0">
             <div :id="storageLocation.id" class="stordiv">
@@ -91,7 +91,7 @@
           </span>
           </span>
 
-        <span v-if="storageLocation.storageLocationName != '电缆库位'">
+        <span v-if="storageLocation.storageLocationName != '库位'">
         <!-- 正常库位容量 60 至 80 之间为正常状态-->
           <span v-if="storageLocation.percentage > 0 && storageLocation.percentage <= 60">
             <div :id="storageLocation.id" class="stordiv" style="background-color: dodgerblue">
@@ -112,7 +112,7 @@
           </span>
           </span>
 
-        <span v-if="storageLocation.storageLocationName != '电缆库位'">
+        <span v-if="storageLocation.storageLocationName != '库位'">
         <!-- 饱和库位容量 80 至 100 之间为饱和状态-->
           <span v-if="storageLocation.percentage > 60 && storageLocation.percentage <= 80">
             <div :id="storageLocation.id" class="stordiv" style="background-color: orange">
@@ -133,7 +133,7 @@
           </span>
           </span>
 
-        <span v-if="storageLocation.storageLocationName != '电缆库位'">
+        <span v-if="storageLocation.storageLocationName != '库位'">
         <!-- 满仓库位容量 大于或等于100为满仓状态-->
           <span v-if=" storageLocation.percentage > 80">
             <div :id="storageLocation.id" class="stordiv" style="background-color: red">
