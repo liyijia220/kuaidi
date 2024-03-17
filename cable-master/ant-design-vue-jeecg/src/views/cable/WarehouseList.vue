@@ -8,8 +8,10 @@
           <a-col :md="4" :sm="7">
             <a-form-item label="仓库类型">
               <a-select v-model="queryParam.type" placeholder="请选择仓库类型">
-                <a-select-option value="1">自家仓库</a-select-option>
-                <a-select-option value="2">2仓库</a-select-option>
+                <a-select-option value="1">华东1号仓库</a-select-option>
+                <a-select-option value="2">华北1号仓库</a-select-option>
+                <a-select-option value="3">华南1号仓库</a-select-option>
+                <a-select-option value="4">西北1号仓库</a-select-option>
               </a-select>
             </a-form-item>
           </a-col>
