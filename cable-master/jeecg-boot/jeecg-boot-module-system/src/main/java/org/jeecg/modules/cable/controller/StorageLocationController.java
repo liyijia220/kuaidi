@@ -147,13 +147,16 @@ public class StorageLocationController extends JeecgController<StorageLocation, 
     @ApiOperation(value = "库位表-通过id删除", notes = "库位表-通过id删除")
     @DeleteMapping(value = "/delete")
     public Result<?> delete(@RequestParam(name = "id") String id) {
-        Page<InventoryListsVo> page = new Page<InventoryListsVo>(1, 10);
-        InventoryListsVo inventoryVo = new InventoryListsVo();
-        inventoryVo.setStorageLocationId(Integer.parseInt(id));
-        IPage<InventoryListsVo> list = inventoryService.InsurancePageList(inventoryVo, page);
-        if (list.getRecords().size() > 0) return Result.error("该库位有库存，请先清空物料再进行删除!");
         storageLocationService.removeById(id);
         return Result.ok("删除成功!");
+//    public Result<?> delete(@RequestParam(name = "id") String id) {
+//        Page<InventoryListsVo> page = new Page<InventoryListsVo>(1, 10);
+//        InventoryListsVo inventoryVo = new InventoryListsVo();
+//        inventoryVo.setStorageLocationId(Integer.parseInt(id));
+//        IPage<InventoryListsVo> list = inventoryService.InsurancePageList(inventoryVo, page);
+//        if (list.getRecords().size() > 0) return Result.error("该库位有库存，请先清空物料再进行删除!");
+//        storageLocationService.removeById(id);
+//        return Result.ok("删除成功!");
     }
 
     /**
