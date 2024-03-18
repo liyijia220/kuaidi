@@ -25,7 +25,7 @@
   align-items: center;
   text-align: center;
   height: 50vh; /* 使用视口高度来确保div占满整个屏幕 */
-  font-size: 28px; /* 增大字体大小 */
+  font-size: 35px; /* 增大字体大小 */
   color: #333;
   font-weight: bold; /* 如果需要，可以使字体加粗 */
 }
