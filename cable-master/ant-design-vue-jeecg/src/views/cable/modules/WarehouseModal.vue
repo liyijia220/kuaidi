@@ -16,10 +16,11 @@
 <!--        </a-form-item>-->
         <a-form-item label="仓库类型":labelCol="labelCol" :wrapperCol="wrapperCol" >
           <a-select v-decorator="['type', validatorRules.type]" placeholder="请选择仓库类型">
-            <a-select-option :value="1">华东1号仓库</a-select-option>
-            <a-select-option :value="2">华北1号仓库</a-select-option>
-            <a-select-option :value="3">华南1号仓库</a-select-option>
-            <a-select-option :value="4">西北1号仓库</a-select-option>
+            <a-select-option :value="1">普货仓库</a-select-option>
+            <a-select-option :value="2">整车仓库</a-select-option>
+            <a-select-option :value="3">冷藏食品类仓库</a-select-option>
+            <a-select-option :value="4">常温食品类仓库</a-select-option>
+            <a-select-option :value="5">危险品仓库</a-select-option>
           </a-select>
         </a-form-item>
         <a-form-item label="仓库名称" :labelCol="labelCol" :wrapperCol="wrapperCol">

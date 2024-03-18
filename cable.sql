@@ -1087,6 +1087,11 @@ CREATE TABLE `storage_location`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库位表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of storage_location
+-- ----------------------------
+INSERT INTO `storage_location` VALUES (1, 1, '2号货架', 20.00, 0.00, '2024-03-18 17:35:24', NULL, 'admin', NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- ----------------------------
 -- Table structure for sys_announcement
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_announcement`;
@@ -1343,7 +1348,7 @@ INSERT INTO `sys_dict` VALUES ('1261106582654726146', '车辆类型', 'vehicle_t
 INSERT INTO `sys_dict` VALUES ('1261107248345296897', '车辆状态', 'vehicle_state', '', 0, 'admin', '2020-05-15 09:32:53', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('1261113597120675841', '仓库类型', 'warehouse_type', '', 0, 'admin', '2020-05-15 09:58:07', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('1262617675946389506', '负责部门', 'depart_name', '', 0, 'admin', '2020-05-19 13:34:47', 'admin', '2020-05-19 16:28:43', 0, 1);
-INSERT INTO `sys_dict` VALUES ('1262629512546791425', '单位', 'unit', '仓库物料数据字典', 0, 'admin', '2020-05-19 14:21:49', 'admin', '2020-05-21 12:02:20', 0, 1);
+INSERT INTO `sys_dict` VALUES ('1262629512546791425', '单位', 'unit', '', 0, 'admin', '2020-05-19 14:21:49', 'admin', '2020-05-21 12:02:20', 0, 1);
 INSERT INTO `sys_dict` VALUES ('1262650376947429378', '计划1类型', 'plan_type', '', 1, 'admin', '2020-05-19 15:44:43', 'admin', '2020-05-29 11:49:52', 0, 1);
 INSERT INTO `sys_dict` VALUES ('1262692917144432642', '操作模式', 'operatorSchema', '', 0, 'admin', '2020-05-19 18:33:46', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('1264758391348609026', '计划完成状态', 'completeState', '', 0, 'admin', '2020-05-25 11:21:13', 'admin', '2020-05-25 13:20:13', 0, 1);
@@ -1353,7 +1358,7 @@ INSERT INTO `sys_dict` VALUES ('1264847783807590402', '是否异常', 'scene_sit
 INSERT INTO `sys_dict` VALUES ('1265106718338822146', '派单类型', 'send_orders_type', '', 0, 'admin', '2020-05-26 10:25:21', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('1265570037902319617', '计划1类型', 'plan1_type', '', 0, 'admin', '2020-05-27 17:06:25', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('1265866015620120577', '计划3类型', 'plan3_type', '', 0, 'admin', '2020-05-28 12:42:31', NULL, NULL, 0, 1);
-INSERT INTO `sys_dict` VALUES ('1269856684411932674', '实际回收规格', 'recyclingSpecifications', '电缆2实际回收规格', 0, 'admin', '2020-06-08 13:00:01', NULL, NULL, 0, 1);
+INSERT INTO `sys_dict` VALUES ('1269856684411932674', '实际回收规格', 'recyclingSpecifications', '', 0, 'admin', '2020-06-08 13:00:01', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('1270259219646816257', '结算状态', 'settle_accounts_state', '', 0, 'admin', '2020-06-09 15:39:33', NULL, NULL, 0, 1);
 INSERT INTO `sys_dict` VALUES ('236e8a4baff0db8c62c00dd95632834f', '同步工作流引擎', 'activiti_sync', '同步工作流引擎', 0, 'admin', '2019-05-15 15:27:33', NULL, NULL, 0, NULL);
 INSERT INTO `sys_dict` VALUES ('2e02df51611a4b9632828ab7e5338f00', '权限策略', 'perms_type', '权限策略', 0, 'admin', '2019-04-26 18:26:55', NULL, NULL, 0, NULL);
@@ -1406,6 +1411,8 @@ CREATE TABLE `sys_dict_item`  (
   INDEX `index_table_sort_order`(`sort_order`) USING BTREE,
   INDEX `index_table_dict_status`(`status`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+
 -- ----------------------------
 -- Records of sys_dict_item
 -- ----------------------------
@@ -1453,8 +1460,8 @@ INSERT INTO `sys_dict_item` VALUES ('1261106677408247809', '1261106582654726146'
 INSERT INTO `sys_dict_item` VALUES ('1261106719896547330', '1261106582654726146', '面包车', '2', '3吨', '', 1, 1, 'admin', '2020-05-15 09:30:47', 'admin', '2020-09-02 14:11:47');
 INSERT INTO `sys_dict_item` VALUES ('1261107306109251586', '1261107248345296897', '正常', '0', NULL, '', 1, 1, 'admin', '2020-05-15 09:33:07', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1261107380931440642', '1261107248345296897', '维修', '1', NULL, '', 1, 1, 'admin', '2020-05-15 09:33:25', NULL, NULL);
-INSERT INTO `sys_dict_item` VALUES ('1261113732651220993', '1261113597120675841', '华东1号仓库', '1', NULL, '', 1, 1, 'admin', '2020-05-15 09:58:39', 'admin', '2024-03-17 22:56:01');
-INSERT INTO `sys_dict_item` VALUES ('1261113809704779777', '1261113597120675841', '华北1号仓库', '2', NULL, '', 2, 1, 'admin', '2020-05-15 09:58:57', 'admin', '2024-03-17 22:54:51');
+INSERT INTO `sys_dict_item` VALUES ('1261113732651220993', '1261113597120675841', '普货仓库', '1', NULL, '', 1, 1, 'admin', '2020-05-15 09:58:39', 'admin', '2024-03-18 17:28:06');
+INSERT INTO `sys_dict_item` VALUES ('1261113809704779777', '1261113597120675841', '整车仓库', '2', NULL, '', 2, 1, 'admin', '2020-05-15 09:58:57', 'admin', '2024-03-18 17:28:21');
 INSERT INTO `sys_dict_item` VALUES ('1262629856261615617', '1262629512546791425', '件', '1', NULL, '袋装并且体积小于20cm*20cm', 1, 1, 'admin', '2020-05-19 14:23:11', 'admin', '2024-03-18 00:07:30');
 INSERT INTO `sys_dict_item` VALUES ('1262629893410566146', '1262629512546791425', '小号纸箱', '2', NULL, '体积小于50cm*50cm', 1, 1, 'admin', '2020-05-19 14:23:20', 'admin', '2024-03-18 00:09:07');
 INSERT INTO `sys_dict_item` VALUES ('1262629965804253185', '1262629512546791425', '中号纸箱', '3', NULL, '体积大于50cm*50cm且小于100cm*100cm', 1, 1, 'admin', '2020-05-19 14:23:37', 'admin', '2024-03-18 00:09:12');
@@ -1490,8 +1497,8 @@ INSERT INTO `sys_dict_item` VALUES ('1269858980789137409', '1269856684411932674'
 INSERT INTO `sys_dict_item` VALUES ('1269859253498589186', '1269856684411932674', '10KV 4*300', '10KV 4*300', NULL, '', 3, 1, 'admin', '2020-06-08 13:10:14', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1270261666779918337', '1270259219646816257', '未结算', '0', NULL, '', 1, 1, 'admin', '2020-06-09 15:49:16', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1270261694835617794', '1270259219646816257', '已结算', '1', NULL, '', 1, 1, 'admin', '2020-06-09 15:49:23', NULL, NULL);
-INSERT INTO `sys_dict_item` VALUES ('1281112543855083522', '1261113597120675841', '华南1号仓库', '3', NULL, '', 3, 1, 'admin', '2020-07-09 14:26:47', 'admin', '2024-03-17 22:54:59');
-INSERT INTO `sys_dict_item` VALUES ('1281112654937030657', '1261113597120675841', '西北1号仓库', '4', NULL, '', 4, 1, 'admin', '2020-07-09 14:27:14', 'admin', '2024-03-17 22:55:03');
+INSERT INTO `sys_dict_item` VALUES ('1281112543855083522', '1261113597120675841', '冷藏食品类仓库', '3', NULL, '', 3, 1, 'admin', '2020-07-09 14:26:47', 'admin', '2024-03-18 17:28:30');
+INSERT INTO `sys_dict_item` VALUES ('1281112654937030657', '1261113597120675841', '常温食品类仓库', '4', NULL, '', 4, 1, 'admin', '2020-07-09 14:27:14', 'admin', '2024-03-18 17:28:40');
 INSERT INTO `sys_dict_item` VALUES ('1301035744769925121', '1269856684411932674', '10KV 3*120', '10KV 3*120', NULL, '', 1, 1, 'admin', '2020-09-02 13:54:28', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1301035798570262529', '1269856684411932674', '10KV 3*240', '10KV 3*240', NULL, '', 1, 1, 'admin', '2020-09-02 13:54:41', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1301035918737072129', '1269856684411932674', '10KV 3*300', '10KV 3*300', NULL, '', 1, 1, 'admin', '2020-09-02 13:55:10', NULL, NULL);
@@ -1503,6 +1510,7 @@ INSERT INTO `sys_dict_item` VALUES ('1743201602843348994', '1262617675946389506'
 INSERT INTO `sys_dict_item` VALUES ('1743201651946065922', '1262617675946389506', '财务部', '4', NULL, '财务部', NULL, NULL, 'admin', '2024-01-05 17:23:56', 'admin', '2024-01-05 17:23:56');
 INSERT INTO `sys_dict_item` VALUES ('1743201734594826242', '1262617675946389506', '经理', '5', NULL, '经理', NULL, NULL, 'admin', '2024-01-05 17:24:15', 'admin', '2024-01-05 17:24:15');
 INSERT INTO `sys_dict_item` VALUES ('1769247806114922498', '1261106582654726146', '货运飞机', '3', '15', '', 1, 1, 'admin', '2024-03-17 14:22:03', 'admin', '2024-03-17 14:22:56');
+INSERT INTO `sys_dict_item` VALUES ('1769657370677260290', '1261113597120675841', '危险品仓库', '5', NULL, '', 5, 1, 'admin', '2024-03-18 17:29:30', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1ce390c52453891f93514c1bd2795d44', 'ad7c65ba97c20a6805d5dcdf13cdaf36', '000', '00', NULL, NULL, 1, 1, 'admin', '2019-03-22 16:34:34', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('1db531bcff19649fa82a644c8a939dc4', '4c03fca6bf1f0299c381213961566349', '组合布局', 'combination', NULL, '', 4, 1, 'admin', '2019-05-11 16:07:08', NULL, NULL);
 INSERT INTO `sys_dict_item` VALUES ('222705e11ef0264d4214affff1fb4ff9', '4f69be5f507accea8d5df5f11346181a', '短信', '1', NULL, '', 1, 1, 'admin', '2023-02-28 10:50:36', 'admin', '2019-04-28 10:58:11');
@@ -1700,10 +1708,10 @@ INSERT INTO `sys_permission` VALUES ('1263409477692395521', '1263409098032386050
 INSERT INTO `sys_permission` VALUES ('1263634618079703042', '1263409098032386050', '物料余留台账', '/cable/MaterialRemainingAccount——del', 'cable/MaterialRemainingAccount——del', NULL, NULL, 1, NULL, '1', 1.20, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-22 08:55:45', 'admin', '2020-09-03 13:54:28', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263676404175302658', '3f915b2769fc80648e92d04e84ca059d', '用户编辑', '', NULL, NULL, NULL, 2, 'user:edit', '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-22 11:41:47', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263751708885487617', '', '用户管理', '/user', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 1.00, 0, 'user', 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:41:01', 'admin', '2020-06-01 08:59:15', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1263753920764284930', '1263753920764284930', '计划列表', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:49:49', 'admin', '2020-05-22 16:51:38', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1263755005381939202', '1263755005381939202', '计划列表', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:54:07', 'admin', '2020-05-22 16:54:45', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1263753920764284930', '1263753920764284930', '出车计划', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:49:49', 'admin', '2020-05-22 16:51:38', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1263755005381939202', '1263755005381939202', '出车计划', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:54:07', 'admin', '2020-05-22 16:54:45', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263755406814580738', '', '计划管理', '/plan', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 3.00, 0, 'file-text', 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:55:43', 'admin', '2020-05-29 17:02:46', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1263756280475521026', '1263755406814580738', '计划列表', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-22 16:59:11', 'admin', '2020-05-29 16:57:55', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1263756280475521026', '1263755406814580738', '出车计划', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-22 16:59:11', 'admin', '2020-05-29 16:57:55', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264748434477789186', '1263755406814580738', '新品/临措', '/cable/Plan3List', 'cable/Plan3List', NULL, NULL, 1, NULL, '1', 3.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-25 10:41:39', 'admin', '2020-05-26 13:33:20', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264754379629932545', '1263755406814580738', '电缆2计划', '/cable/Plan4List', 'cable/Plan4List', NULL, NULL, 1, NULL, '1', 4.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-25 11:05:17', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264766895384104962', '1263405907984232449', '车辆保险', '/cable/InsuranceList', 'cable/InsuranceList', NULL, NULL, 1, NULL, '1', 2.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-25 11:55:01', 'admin', '2020-05-29 16:58:11', 0, 0, '1', 0);
@@ -1713,13 +1721,13 @@ INSERT INTO `sys_permission` VALUES ('1264783208991100930', '1263755406814580738
 INSERT INTO `sys_permission` VALUES ('1265453448014852097', 'f0675b52d89100ee88472b6800754a08', '出车统计', '/cable/SysUserTaskCensusList', 'cable/SysUserTaskCensusList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-27 09:23:08', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1265456565922033665', 'f0675b52d89100ee88472b6800754a08', '人员任务统计', '/cable/VehicleTaskCensusList', 'cable/VehicleTaskCensusList', NULL, NULL, 1, NULL, '1', 1.10, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-27 09:35:31', 'admin', '2020-06-04 09:01:19', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1265473041877291009', '1263751708885487617', '部门设置', '/cable/Bumen', 'cable/Bumen', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-27 10:40:59', NULL, NULL, 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1267258257822875649', '', '库存管理', '/cable/kc', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 5.00, 0, 'switcher', 1, 0, 0, 0, NULL, 'admin', '2020-06-01 08:54:48', 'admin', '2020-06-01 08:58:39', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1267258257822875649', '', '快递管理', '/cable/kc', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 5.00, 0, 'switcher', 1, 0, 0, 0, NULL, 'admin', '2020-06-01 08:54:48', 'admin', '2020-06-01 08:58:39', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1267258607464251394', '1267258257822875649', '库存查询', '/cable/InventoryList', 'cable/InventoryList', NULL, NULL, 1, NULL, '1', 2.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-01 08:56:11', NULL, NULL, 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1267258713513033729', '1267258257822875649', '物料管理', '/cable/MaterialList', 'cable/MaterialList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-01 08:56:36', NULL, NULL, 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1267258713513033729', '1267258257822875649', '快递管理', '/cable/MaterialList', 'cable/MaterialList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-01 08:56:36', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1270294258602377218', '1263409098032386050', '计划结算', '/cable/SettleAccounts', 'cable/SettleAccounts', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-09 17:58:47', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1270641503206035458', 'd7d6e2e4e2934f2c9385a623fd98c6f3', '消息通知', '/isps/userAnnouncement', 'system/UserAnnouncementList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-10 16:58:36', 'admin', '2020-06-10 17:00:52', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1270657121469763586', 'd7d6e2e4e2934f2c9385a623fd98c6f3', '定时任务', '/isystem/QuartzJobList', 'system/QuartzJobList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-10 18:00:40', NULL, NULL, 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1270908674704293890', 'f0675b52d89100ee88472b6800754a08', '物料出入统计', '/cable/MaterialOutPutAccount', 'cable/MaterialOutPutAccount', NULL, NULL, 1, NULL, '1', 1.30, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-11 10:40:15', 'admin', '2020-06-11 10:41:59', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1270908674704293890', 'f0675b52d89100ee88472b6800754a08', '快递出入统计', '/cable/MaterialOutPutAccount', 'cable/MaterialOutPutAccount', NULL, NULL, 1, NULL, '1', 1.30, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-11 10:40:15', 'admin', '2020-06-11 10:41:59', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1271044940736778241', '1263396876875857922', '转移记录', '/cable/YikuList', 'cable/YikuList', NULL, NULL, 1, NULL, '1', 3.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-11 19:41:43', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1271267264220229634', '1263405907984232449', '车辆列表', '/cable/VehicleList', 'cable/VehicleList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-12 10:25:09', 'admin', '2020-06-15 09:06:32', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('190c2b43bec6a5f7a4194a85db67d96a', '1263751708885487617', '角色权限', '/isystem/roleUserList', 'system/RoleUserList', NULL, NULL, 1, NULL, NULL, 1.20, 0, '', 1, 1, 0, 0, NULL, 'admin', '2019-04-17 15:13:56', 'admin', '2020-05-29 13:48:39', 0, 0, NULL, 0);
@@ -2368,6 +2376,8 @@ CREATE TABLE `vehicle`  (
 INSERT INTO `vehicle` VALUES (1, 1, '10吨', '鲁R12345', NULL, NULL, 0, '2024-01-05 00:00:00', '2024-03-17 14:24:36', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `vehicle` VALUES (2, 3, '15吨', '鲁R23456', NULL, NULL, 0, '2024-03-17 22:43:50', '2024-03-17 22:43:50', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `vehicle` VALUES (3, 2, '3吨', '鲁R34567', NULL, NULL, 1, '2024-03-17 22:44:03', '2024-03-17 22:44:03', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `vehicle` VALUES (4, 1, '10吨', '鲁R45678', NULL, NULL, 1, '2024-03-17 22:45:03', '2024-03-17 22:45:03', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
+
 
 -- ----------------------------
 -- Table structure for warehouse
