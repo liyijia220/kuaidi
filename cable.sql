@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 127.0.0.1
+ Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 50726
+ Source Server Version : 50744
  Source Host           : 127.0.0.1:3306
  Source Schema         : cable
 
  Target Server Type    : MySQL
- Target Server Version : 50726
+ Target Server Version : 50744
  File Encoding         : 65001
 
- Date: 14/03/2021 18:59:44
+ Date: 18/03/2024 19:05:41
 */
 
 SET NAMES utf8mb4;
@@ -31,6 +31,10 @@ CREATE TABLE `car`  (
   `remake` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 454 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of car
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for deliver_storage
@@ -77,6 +81,10 @@ CREATE TABLE `deliver_storage`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '入库/完单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of deliver_storage
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for demo
 -- ----------------------------
 DROP TABLE IF EXISTS `demo`;
@@ -101,6 +109,10 @@ CREATE TABLE `demo`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of demo
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for demo_field_def_val_main
 -- ----------------------------
 DROP TABLE IF EXISTS `demo_field_def_val_main`;
@@ -120,6 +132,10 @@ CREATE TABLE `demo_field_def_val_main`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of demo_field_def_val_main
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for demo_field_def_val_sub
 -- ----------------------------
 DROP TABLE IF EXISTS `demo_field_def_val_sub`;
@@ -136,6 +152,10 @@ CREATE TABLE `demo_field_def_val_sub`  (
   `sys_org_code` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '所属部门',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of demo_field_def_val_sub
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for insurance
@@ -161,13 +181,12 @@ CREATE TABLE `insurance`  (
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '车保险表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '车保险表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of insurance
 -- ----------------------------
 INSERT INTO `insurance` VALUES (1, '鲁R12345', '平安保险', '221173040425', '2024-03-01 00:00:00', '2025-03-01 00:00:00', '2024-03-01 00:00:00', '2025-03-01 00:00:00', '221173040425', '2024-01-05 15:56:14', '2024-03-17 22:45:05', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
-
 
 -- ----------------------------
 -- Table structure for inventory
@@ -196,6 +215,10 @@ CREATE TABLE `inventory`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库存表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of inventory
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for jeecg_monthly_growth_analysis
 -- ----------------------------
 DROP TABLE IF EXISTS `jeecg_monthly_growth_analysis`;
@@ -203,10 +226,14 @@ CREATE TABLE `jeecg_monthly_growth_analysis`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `year` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `month` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '月份',
-  `main_income` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '佣金/主营收入',
-  `other_income` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '其他收入',
+  `main_income` decimal(18, 2) NULL DEFAULT NULL COMMENT '佣金/主营收入',
+  `other_income` decimal(18, 2) NULL DEFAULT NULL COMMENT '其他收入',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of jeecg_monthly_growth_analysis
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for jeecg_order_customer
@@ -228,6 +255,10 @@ CREATE TABLE `jeecg_order_customer`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of jeecg_order_customer
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for jeecg_order_main
 -- ----------------------------
 DROP TABLE IF EXISTS `jeecg_order_main`;
@@ -246,6 +277,10 @@ CREATE TABLE `jeecg_order_main`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of jeecg_order_main
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for jeecg_order_ticket
 -- ----------------------------
 DROP TABLE IF EXISTS `jeecg_order_ticket`;
@@ -262,20 +297,28 @@ CREATE TABLE `jeecg_order_ticket`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of jeecg_order_ticket
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for jeecg_project_nature_income
 -- ----------------------------
 DROP TABLE IF EXISTS `jeecg_project_nature_income`;
 CREATE TABLE `jeecg_project_nature_income`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nature` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '项目性质',
-  `insurance_fee` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '保险经纪佣金费',
-  `risk_consulting_fee` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '风险咨询费',
-  `evaluation_fee` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '承保公估评估费',
-  `insurance_evaluation_fee` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '保险公估费',
-  `bidding_consulting_fee` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '投标咨询费',
-  `interol_consulting_fee` decimal(18, 2) NULL DEFAULT 0.00 COMMENT '内控咨询费',
+  `insurance_fee` decimal(18, 2) NULL DEFAULT NULL COMMENT '保险经纪佣金费',
+  `risk_consulting_fee` decimal(18, 2) NULL DEFAULT NULL COMMENT '风险咨询费',
+  `evaluation_fee` decimal(18, 2) NULL DEFAULT NULL COMMENT '承保公估评估费',
+  `insurance_evaluation_fee` decimal(18, 2) NULL DEFAULT NULL COMMENT '保险公估费',
+  `bidding_consulting_fee` decimal(18, 2) NULL DEFAULT NULL COMMENT '投标咨询费',
+  `interol_consulting_fee` decimal(18, 2) NULL DEFAULT NULL COMMENT '内控咨询费',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of jeecg_project_nature_income
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for joa_demo
@@ -294,6 +337,10 @@ CREATE TABLE `joa_demo`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `update_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '修改人id'
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '流程测试' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of joa_demo
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for material
@@ -320,6 +367,10 @@ CREATE TABLE `material`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '物料表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of material
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgform_button
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgform_button`;
@@ -343,6 +394,10 @@ CREATE TABLE `onl_cgform_button`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'Online表单自定义按钮' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgform_button
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgform_enhance_java
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgform_enhance_java`;
@@ -361,6 +416,10 @@ CREATE TABLE `onl_cgform_enhance_java`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgform_enhance_java
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgform_enhance_js
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgform_enhance_js`;
@@ -376,6 +435,10 @@ CREATE TABLE `onl_cgform_enhance_js`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgform_enhance_js
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgform_enhance_sql
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgform_enhance_sql`;
@@ -389,6 +452,10 @@ CREATE TABLE `onl_cgform_enhance_sql`  (
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `index_formid`(`CGFORM_HEAD_ID`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of onl_cgform_enhance_sql
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for onl_cgform_field
@@ -443,6 +510,10 @@ CREATE TABLE `onl_cgform_field`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgform_field
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgform_head
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgform_head`;
@@ -485,6 +556,10 @@ CREATE TABLE `onl_cgform_head`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgform_head
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgform_index
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgform_index`;
@@ -503,6 +578,10 @@ CREATE TABLE `onl_cgform_index`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `index_table_id`(`cgform_head_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of onl_cgform_index
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for onl_cgreport_head
@@ -525,6 +604,10 @@ CREATE TABLE `onl_cgreport_head`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `index_onlinereport_code`(`code`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of onl_cgreport_head
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for onl_cgreport_item
@@ -556,6 +639,10 @@ CREATE TABLE `onl_cgreport_item`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgreport_item
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for onl_cgreport_param
 -- ----------------------------
 DROP TABLE IF EXISTS `onl_cgreport_param`;
@@ -575,6 +662,10 @@ CREATE TABLE `onl_cgreport_param`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of onl_cgreport_param
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for oss_file
 -- ----------------------------
 DROP TABLE IF EXISTS `oss_file`;
@@ -588,6 +679,10 @@ CREATE TABLE `oss_file`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新日期',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'Oss File' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of oss_file
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for plan1
@@ -662,6 +757,10 @@ CREATE TABLE `plan1`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计划表1' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of plan1
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for plan2
 -- ----------------------------
 DROP TABLE IF EXISTS `plan2`;
@@ -687,8 +786,8 @@ CREATE TABLE `plan2`  (
   `equipment_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '设备号',
   `disposed` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '实物已退役但未处置',
   `receipt_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '入库单号',
-  `already_deliver_storage` decimal(4, 2) NULL DEFAULT 0.00 COMMENT '已入库数',
-  `already_receiving_storage` decimal(4, 2) NULL DEFAULT 0.00 COMMENT '已出库数',
+  `already_deliver_storage` decimal(4, 2) NULL DEFAULT NULL COMMENT '已入库数',
+  `already_receiving_storage` decimal(4, 2) NULL DEFAULT NULL COMMENT '已出库数',
   `send_orders_state` int(11) NULL DEFAULT 0 COMMENT '0未派单/1已派单',
   `complete_state` int(11) NULL DEFAULT 0 COMMENT '完成状态(字典)',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
@@ -702,6 +801,10 @@ CREATE TABLE `plan2`  (
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计划表2' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of plan2
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for plan3
@@ -752,6 +855,10 @@ CREATE TABLE `plan3`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计划表3' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of plan3
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for plan4
 -- ----------------------------
 DROP TABLE IF EXISTS `plan4`;
@@ -790,6 +897,10 @@ CREATE TABLE `plan4`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计划表4' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of plan4
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for qrtz_blob_triggers
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_blob_triggers`;
@@ -803,6 +914,10 @@ CREATE TABLE `qrtz_blob_triggers`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'InnoDB free: 504832 kB; (`SCHED_NAME` `TRIGGER_NAME` `TRIGGE' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of qrtz_blob_triggers
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for qrtz_calendars
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_calendars`;
@@ -812,6 +927,10 @@ CREATE TABLE `qrtz_calendars`  (
   `CALENDAR` blob NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `CALENDAR_NAME`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of qrtz_calendars
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for qrtz_cron_triggers
@@ -826,6 +945,10 @@ CREATE TABLE `qrtz_cron_triggers`  (
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_cron_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'InnoDB free: 504832 kB; (`SCHED_NAME` `TRIGGER_NAME` `TRIGGE' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of qrtz_cron_triggers
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for qrtz_fired_triggers
@@ -849,6 +972,10 @@ CREATE TABLE `qrtz_fired_triggers`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of qrtz_fired_triggers
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for qrtz_job_details
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_job_details`;
@@ -867,6 +994,10 @@ CREATE TABLE `qrtz_job_details`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of qrtz_job_details
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for qrtz_locks
 -- ----------------------------
 DROP TABLE IF EXISTS `qrtz_locks`;
@@ -880,6 +1011,7 @@ CREATE TABLE `qrtz_locks`  (
 -- Records of qrtz_locks
 -- ----------------------------
 INSERT INTO `qrtz_locks` VALUES ('MyScheduler', 'STATE_ACCESS');
+INSERT INTO `qrtz_locks` VALUES ('MyScheduler', 'TRIGGER_ACCESS');
 
 -- ----------------------------
 -- Table structure for qrtz_paused_trigger_grps
@@ -890,6 +1022,10 @@ CREATE TABLE `qrtz_paused_trigger_grps`  (
   `TRIGGER_GROUP` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_GROUP`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of qrtz_paused_trigger_grps
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for qrtz_scheduler_state
@@ -906,7 +1042,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'xb1615719347767', 1615719581247, 10000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1710742640491', 1710759939804, 10000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -922,6 +1058,10 @@ CREATE TABLE `qrtz_simple_triggers`  (
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_simple_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'InnoDB free: 504832 kB; (`SCHED_NAME` `TRIGGER_NAME` `TRIGGE' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of qrtz_simple_triggers
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for qrtz_simprop_triggers
@@ -945,6 +1085,10 @@ CREATE TABLE `qrtz_simprop_triggers`  (
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_simprop_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'InnoDB free: 504832 kB; (`SCHED_NAME` `TRIGGER_NAME` `TRIGGE' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of qrtz_simprop_triggers
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for qrtz_triggers
@@ -971,6 +1115,10 @@ CREATE TABLE `qrtz_triggers`  (
   INDEX `SCHED_NAME`(`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) REFERENCES `qrtz_job_details` (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'InnoDB free: 504832 kB; (`SCHED_NAME` `JOB_NAME` `JOB_GROUP`' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of qrtz_triggers
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for receiving_storage
@@ -1017,6 +1165,10 @@ CREATE TABLE `receiving_storage`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '出库/完单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of receiving_storage
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for send_orders
 -- ----------------------------
 DROP TABLE IF EXISTS `send_orders`;
@@ -1043,6 +1195,10 @@ CREATE TABLE `send_orders`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of send_orders
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for send_orders_subtabulation
 -- ----------------------------
 DROP TABLE IF EXISTS `send_orders_subtabulation`;
@@ -1065,6 +1221,10 @@ CREATE TABLE `send_orders_subtabulation`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单-车辆-员工关系表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of send_orders_subtabulation
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for storage_location
 -- ----------------------------
 DROP TABLE IF EXISTS `storage_location`;
@@ -1084,7 +1244,7 @@ CREATE TABLE `storage_location`  (
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库位表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库位表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of storage_location
@@ -1123,6 +1283,10 @@ CREATE TABLE `sys_announcement`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统通告表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_announcement
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_announcement_send
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_announcement_send`;
@@ -1137,6 +1301,10 @@ CREATE TABLE `sys_announcement_send`  (
   `update_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '更新人',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间'
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户通告阅读标记表' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_announcement_send
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_category
@@ -1158,6 +1326,10 @@ CREATE TABLE `sys_category`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_category
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_check_rule
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_check_rule`;
@@ -1176,6 +1348,10 @@ CREATE TABLE `sys_check_rule`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_check_rule
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_data_log
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_data_log`;
@@ -1192,6 +1368,10 @@ CREATE TABLE `sys_data_log`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `sindex`(`data_table`, `data_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_data_log
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_data_source
@@ -1255,6 +1435,10 @@ CREATE TABLE `sys_depart`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织机构表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_depart
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_depart_permission
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_depart_permission`;
@@ -1265,6 +1449,10 @@ CREATE TABLE `sys_depart_permission`  (
   `data_rule_ids` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '数据规则id',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门权限表' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_depart_permission
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_depart_role
@@ -1284,6 +1472,10 @@ CREATE TABLE `sys_depart_role`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门角色表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_depart_role
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_depart_role_permission
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_depart_role_permission`;
@@ -1300,6 +1492,10 @@ CREATE TABLE `sys_depart_role_permission`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门角色权限表' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_depart_role_permission
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_depart_role_user
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_depart_role_user`;
@@ -1309,6 +1505,10 @@ CREATE TABLE `sys_depart_role_user`  (
   `drole_id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色id',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门角色用户表' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_depart_role_user
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_dict
@@ -1411,7 +1611,6 @@ CREATE TABLE `sys_dict_item`  (
   INDEX `index_table_sort_order`(`sort_order`) USING BTREE,
   INDEX `index_table_dict_status`(`status`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
 
 -- ----------------------------
 -- Records of sys_dict_item
@@ -1606,6 +1805,10 @@ CREATE TABLE `sys_fill_rule`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_fill_rule
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_log
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_log`;
@@ -1653,6 +1856,27 @@ INSERT INTO `sys_log` VALUES ('1371053227931385857', 2, '物料表-分页查询�
 INSERT INTO `sys_log` VALUES ('1371053237318238209', 2, '派单-车辆-员工关系表-分页查询出车统计', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StatisticalReportController.getDepartureStatistics()', NULL, '  taskTime: null  pageNo: 1  pageSize: 10', NULL, 17, 'admin', '2021-03-14 18:58:59', NULL, NULL);
 INSERT INTO `sys_log` VALUES ('1371053239679631361', 2, '派单-车辆-员工关系表-分页查询人员任务统计', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StatisticalReportController.getPersonnelTaskStatistics()', NULL, '  taskTime: null  realName: null  pageNo: 1  pageSize: 10', NULL, 14, 'admin', '2021-03-14 18:59:00', NULL, NULL);
 INSERT INTO `sys_log` VALUES ('1371053242246545409', 2, '物料出入库台账', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.getMaterialOutPutAccountList()', NULL, '  materialOutPutAccountVo: MaterialOutPutAccountVo(id=null, materialSerial=null, materialName=null, materialAtions=null, materialSupplier=null, materialUnit=null, deliverNum=null, receivingNum=null, ylNum=null, year=2021, quarter=null, month=3, week=null, startTime=, endTime=)  pageNo: 1  pageSize: 10', NULL, 13, 'admin', '2021-03-14 18:59:01', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664311919030273', 2, '车辆表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.VehicleController.queryPageList()', NULL, '  vehicle: Vehicle(id=null, type=null, carryingCapacity=null, license=null, engineNumber=null, text=null, state=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null)  pageNo: 1  pageSize: 10', NULL, 20, 'admin', '2024-03-18 17:57:05', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664350758285314', 2, '车保险表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.InsuranceController.queryPageList()', NULL, '  insurance: InsuranceListVo(id=null, license=null, vehicleId=null, insuraName=null, insurancePolicy=null, insuranceDate=null, insuranceDateBegin=null, insuranceDateEnd=null, strongPolicy=null, strongDate=null, strongDateBegin=null, strongDateEnd=null)  pageNo: 1  pageSize: 10', NULL, 9, 'admin', '2024-03-18 17:57:15', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664374699372545', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 7, 'admin', '2024-03-18 17:57:20', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664396883046402', 2, '仓库表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.WarehouseController.queryPageList()', NULL, '  warehouse: Warehouse(id=null, type=null, name=null, address=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null)  pageNo: 1  pageSize: 10  req: org.apache.shiro.web.servlet.ShiroHttpServletRequest@67bf64c7', NULL, 7, 'admin', '2024-03-18 17:57:26', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664418664067073', 2, '库位表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StorageLocationController.queryPageList()', NULL, '  storageLocationVo: StorageLocationVo(id=null, warehouseId=null, storageLocationName=, storageLocationVolume=null, theCurrentVolume=null, percentage=null)', NULL, 0, 'admin', '2024-03-18 17:57:31', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664418785701890', 2, '库位表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StorageLocationController.queryPageList()', NULL, '  storageLocationVo: StorageLocationVo(id=null, warehouseId=1, storageLocationName=, storageLocationVolume=null, theCurrentVolume=null, percentage=null)', NULL, 6, 'admin', '2024-03-18 17:57:31', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664433369296897', 2, '库位表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StorageLocationController.queryPageList()', NULL, '  storageLocationVo: StorageLocationVo(id=null, warehouseId=1, storageLocationName=, storageLocationVolume=null, theCurrentVolume=null, percentage=null)', NULL, 4, 'admin', '2024-03-18 17:57:34', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664472879640578', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 5, 'admin', '2024-03-18 17:57:44', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769664488713138178', 2, '分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.WarehouseController.selectInfo()', NULL, '  inventoryVo: InventoryVo(id=null, pType=null, warehouseName=null, storageLocationName=null, storageLocationId=null, projectNo=null, projectName=null, serial=, materialName=null, abbreviation=null, inventoryQuantity=null, dw=null, pItemSlip=null, pAssetNo=null, ations=null, availableWeight=null, proTheorderNo=null, recyclingSpecifications=, assetNo=null)  pageNo: 1  pageSize: 5', NULL, 23, 'admin', '2024-03-18 17:57:48', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769677094119190530', 2, '仓库表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.WarehouseController.queryPageList()', NULL, '  warehouse: Warehouse(id=null, type=null, name=null, address=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null)  pageNo: 1  pageSize: 10  req: org.apache.shiro.web.servlet.ShiroHttpServletRequest@3953381a', NULL, 25, 'admin', '2024-03-18 18:47:53', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769677742642475010', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 11, 'admin', '2024-03-18 18:50:28', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769678842053439490', 2, '车辆表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.VehicleController.queryPageList()', NULL, '  vehicle: Vehicle(id=null, type=null, carryingCapacity=null, license=null, engineNumber=null, text=null, state=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null)  pageNo: 1  pageSize: 10', NULL, 20, 'admin', '2024-03-18 18:54:50', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769678847921270786', 2, '车保险表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.InsuranceController.queryPageList()', NULL, '  insurance: InsuranceListVo(id=null, license=null, vehicleId=null, insuraName=null, insurancePolicy=null, insuranceDate=null, insuranceDateBegin=null, insuranceDateEnd=null, strongPolicy=null, strongDate=null, strongDateBegin=null, strongDateEnd=null)  pageNo: 1  pageSize: 10', NULL, 11, 'admin', '2024-03-18 18:54:51', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769678868272033794', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 3, 'admin', '2024-03-18 18:54:56', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679116520304642', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 5, 'admin', '2024-03-18 18:55:55', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679123273134081', 2, '计划表2-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan2Controller.queryPageList()', NULL, '  plan2: Plan2(id=null, planType=null, site=null, equipmentName=null, projectNo=null, retiredAssetNo=null, capacity=null, model=null, assetStatus=null, retiredDate=null, receiptIs=null, theLocation=null, disposalWay=null, assetNo=null, projectType=null, equipmentOwners=null, address=null, note=null, equipmentNo=null, disposed=null, receiptNo=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 3, 'admin', '2024-03-18 18:55:57', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679172954664961', 2, '计划表3-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan3Controller.queryPageList()', NULL, '  plan3: Plan3(id=null, planType=null, projectNo=null, engName=null, proApplyNo=null, proTheorderNo=null, lineitemNo=null, materialCode=null, materialDescribe=null, measuringUnit=null, supplier=null, num=null, projectManager=null, mPhone=null, companyName=null, fieldConsignee=null, dateOfArrival=null, constructionOrganization=null, mainContractor=null, cPhone=null, address=null, feedback=null, constructionTime=null, startTime=null, stopTime=null, note=null, instructions=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 8, 'admin', '2024-03-18 18:56:09', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679182588981249', 2, '计划表4-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan4Controller.queryPageList()', NULL, '  plan4: Plan4(id=null, planType=null, engName=null, projectNo=null, cableName=null, voltageGrade=null, cableCross=null, samplingLength=null, samplingDate=null, samplingAddres=null, construc=null, construcContact=null, team=null, teamContact=null, full=null, note=null, feedback=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null)  pageNo: 1  pageSize: 10', NULL, 6, 'admin', '2024-03-18 18:56:11', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679820660060162', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 9, 'admin', '2024-03-18 18:58:43', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679824233607169', 2, '计划表2-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan2Controller.queryPageList()', NULL, '  plan2: Plan2(id=null, planType=null, site=null, equipmentName=null, projectNo=null, retiredAssetNo=null, capacity=null, model=null, assetStatus=null, retiredDate=null, receiptIs=null, theLocation=null, disposalWay=null, assetNo=null, projectType=null, equipmentOwners=null, address=null, note=null, equipmentNo=null, disposed=null, receiptNo=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 7, 'admin', '2024-03-18 18:58:44', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1769679829824614401', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-18 18:58:45', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_permission
@@ -1703,25 +1927,25 @@ INSERT INTO `sys_permission` VALUES ('1263396876875857922', '', '仓库管理', 
 INSERT INTO `sys_permission` VALUES ('1263398470874955777', '1263409098032386050', '年度出入台账', '/cable/AnnualAccount', 'cable/AnnualAccount', NULL, NULL, 1, NULL, '1', 1.10, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-21 17:17:23', 'admin', '2020-06-04 14:10:31', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263405907984232449', '', '车辆管理', '/vehicle', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 2.00, 0, 'car', 1, 0, 0, 0, NULL, 'admin', '2020-05-21 17:46:56', 'admin', '2020-05-29 16:59:52', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263406605655314433', '1263396876875857922', '仓库设置', '/cable/WarehouseList', 'cable/WarehouseList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-21 17:49:42', 'admin', '2020-05-27 20:02:33', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1263409098032386050', '', '财务管理', '/caiw', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 6.00, 0, 'pay-circle', 1, 0, 0, 0, NULL, 'admin', '2020-05-21 17:59:37', 'admin', '2020-06-01 08:55:09', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1263409098032386050', '', '财务管理', '/caiw', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 7.00, 0, 'pay-circle', 1, 0, 0, 0, NULL, 'admin', '2020-05-21 17:59:37', 'admin', '2024-03-18 18:56:57', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263409477692395521', '1263409098032386050', '出入库台账', '/cable/OutPutWarehouseList', 'cable/OutPutWarehouseList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-21 18:01:07', 'admin', '2020-06-04 14:10:13', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263634618079703042', '1263409098032386050', '物料余留台账', '/cable/MaterialRemainingAccount——del', 'cable/MaterialRemainingAccount——del', NULL, NULL, 1, NULL, '1', 1.20, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-22 08:55:45', 'admin', '2020-09-03 13:54:28', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263676404175302658', '3f915b2769fc80648e92d04e84ca059d', '用户编辑', '', NULL, NULL, NULL, 2, 'user:edit', '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-22 11:41:47', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263751708885487617', '', '用户管理', '/user', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 1.00, 0, 'user', 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:41:01', 'admin', '2020-06-01 08:59:15', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263753920764284930', '1263753920764284930', '出车计划', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:49:49', 'admin', '2020-05-22 16:51:38', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1263755005381939202', '1263755005381939202', '出车计划', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:54:07', 'admin', '2020-05-22 16:54:45', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1263755406814580738', '', '计划管理', '/plan', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 3.00, 0, 'file-text', 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:55:43', 'admin', '2020-05-29 17:02:46', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1263756280475521026', '1263755406814580738', '出车计划', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-22 16:59:11', 'admin', '2020-05-29 16:57:55', 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1264748434477789186', '1263755406814580738', '新品/临措', '/cable/Plan3List', 'cable/Plan3List', NULL, NULL, 1, NULL, '1', 3.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-25 10:41:39', 'admin', '2020-05-26 13:33:20', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1263755406814580738', '', '信息管理', '/plan', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 6.00, 0, 'file-text', 1, 0, 0, 0, NULL, 'admin', '2020-05-22 16:55:43', 'admin', '2024-03-18 19:03:23', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1263756280475521026', '1263755406814580738', '出车计划管理', '/cable/Plan1List', 'cable/Plan1List', NULL, NULL, 1, NULL, '1', 1.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-22 16:59:11', 'admin', '2024-03-18 19:03:57', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1264748434477789186', '1263755406814580738', '留言管理', '/cable/Plan3List', 'cable/Plan3List', NULL, NULL, 1, NULL, '1', 3.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-25 10:41:39', 'admin', '2024-03-18 19:04:26', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264754379629932545', '1263755406814580738', '电缆2计划', '/cable/Plan4List', 'cable/Plan4List', NULL, NULL, 1, NULL, '1', 4.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-25 11:05:17', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264766895384104962', '1263405907984232449', '车辆保险', '/cable/InsuranceList', 'cable/InsuranceList', NULL, NULL, 1, NULL, '1', 2.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-25 11:55:01', 'admin', '2020-05-29 16:58:11', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264767145716944897', '1263405907984232449', '车辆任务', '/cable/SendOrdersList', 'cable/SendOrdersList', NULL, NULL, 1, NULL, '1', 3.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-25 11:56:00', 'admin', '2020-05-29 16:58:17', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1264767413053493250', '1263396876875857922', '库位设置', '/cable/StorageLocationList', 'cable/StorageLocationList', NULL, NULL, 1, NULL, '1', 2.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-25 11:57:04', NULL, NULL, 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1264783208991100930', '1263755406814580738', ' 备品计划', '/cable/Plan2List', 'cable/Plan2List', NULL, NULL, 1, NULL, '1', 2.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-25 12:59:50', 'admin', '2020-05-29 16:57:39', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1264783208991100930', '1263755406814580738', '新闻公告管理', '/cable/Plan2List', 'cable/Plan2List', NULL, NULL, 1, NULL, '1', 2.00, 0, '', 1, 1, 0, 0, NULL, 'admin', '2020-05-25 12:59:50', 'admin', '2024-03-18 19:04:15', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1265453448014852097', 'f0675b52d89100ee88472b6800754a08', '出车统计', '/cable/SysUserTaskCensusList', 'cable/SysUserTaskCensusList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-27 09:23:08', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1265456565922033665', 'f0675b52d89100ee88472b6800754a08', '人员任务统计', '/cable/VehicleTaskCensusList', 'cable/VehicleTaskCensusList', NULL, NULL, 1, NULL, '1', 1.10, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-27 09:35:31', 'admin', '2020-06-04 09:01:19', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1265473041877291009', '1263751708885487617', '部门设置', '/cable/Bumen', 'cable/Bumen', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-05-27 10:40:59', NULL, NULL, 0, 0, '1', 0);
-INSERT INTO `sys_permission` VALUES ('1267258257822875649', '', '快递管理', '/cable/kc', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 5.00, 0, 'switcher', 1, 0, 0, 0, NULL, 'admin', '2020-06-01 08:54:48', 'admin', '2020-06-01 08:58:39', 0, 0, '1', 0);
+INSERT INTO `sys_permission` VALUES ('1267258257822875649', '', '快递管理', '/cable/kc', 'layouts/RouteView', NULL, NULL, 0, NULL, '1', 1.50, 0, 'switcher', 1, 0, 0, 0, NULL, 'admin', '2020-06-01 08:54:48', 'admin', '2024-03-18 18:59:41', 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1267258607464251394', '1267258257822875649', '库存查询', '/cable/InventoryList', 'cable/InventoryList', NULL, NULL, 1, NULL, '1', 2.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-01 08:56:11', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1267258713513033729', '1267258257822875649', '快递管理', '/cable/MaterialList', 'cable/MaterialList', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-01 08:56:36', NULL, NULL, 0, 0, '1', 0);
 INSERT INTO `sys_permission` VALUES ('1270294258602377218', '1263409098032386050', '计划结算', '/cable/SettleAccounts', 'cable/SettleAccounts', NULL, NULL, 1, NULL, '1', 1.00, 0, NULL, 1, 1, 0, 0, NULL, 'admin', '2020-06-09 17:58:47', NULL, NULL, 0, 0, '1', 0);
@@ -1763,6 +1987,10 @@ CREATE TABLE `sys_permission_data_rule`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_permission_data_rule
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_position
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_position`;
@@ -1780,6 +2008,10 @@ CREATE TABLE `sys_position`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uniq_code`(`code`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_position
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_quartz_job
@@ -1800,6 +2032,10 @@ CREATE TABLE `sys_quartz_job`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uniq_job_class_name`(`job_class_name`) USING BTREE
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sys_quartz_job
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -2086,6 +2322,10 @@ CREATE TABLE `sys_sms`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_sms
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_sms_template
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_sms_template`;
@@ -2103,6 +2343,10 @@ CREATE TABLE `sys_sms_template`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uniq_templatecode`(`template_code`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_sms_template
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -2182,6 +2426,10 @@ CREATE TABLE `sys_user_agent`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户代理人设置' ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of sys_user_agent
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for sys_user_depart
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_depart`;
@@ -2194,6 +2442,10 @@ CREATE TABLE `sys_user_depart`  (
   INDEX `index_depart_groupkorgid`(`dep_id`) USING BTREE,
   INDEX `index_depart_groupk_uidanddid`(`user_id`, `dep_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_user_depart
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -2257,6 +2509,10 @@ CREATE TABLE `test_demo`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of test_demo
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for test_enhance_select
 -- ----------------------------
 DROP TABLE IF EXISTS `test_enhance_select`;
@@ -2269,6 +2525,10 @@ CREATE TABLE `test_enhance_select`  (
   `create_by` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of test_enhance_select
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for test_order_main
@@ -2285,6 +2545,10 @@ CREATE TABLE `test_order_main`  (
   `descc` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of test_order_main
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for test_order_product
@@ -2304,6 +2568,10 @@ CREATE TABLE `test_order_product`  (
   `pro_type` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '产品类型',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of test_order_product
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for test_person
@@ -2347,6 +2615,10 @@ CREATE TABLE `test_shoptype_tree`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of test_shoptype_tree
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for vehicle
 -- ----------------------------
 DROP TABLE IF EXISTS `vehicle`;
@@ -2368,7 +2640,7 @@ CREATE TABLE `vehicle`  (
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '车辆表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '车辆表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of vehicle
@@ -2377,7 +2649,6 @@ INSERT INTO `vehicle` VALUES (1, 1, '10吨', '鲁R12345', NULL, NULL, 0, '2024-0
 INSERT INTO `vehicle` VALUES (2, 3, '15吨', '鲁R23456', NULL, NULL, 0, '2024-03-17 22:43:50', '2024-03-17 22:43:50', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `vehicle` VALUES (3, 2, '3吨', '鲁R34567', NULL, NULL, 1, '2024-03-17 22:44:03', '2024-03-17 22:44:03', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `vehicle` VALUES (4, 1, '10吨', '鲁R45678', NULL, NULL, 1, '2024-03-17 22:45:03', '2024-03-17 22:45:03', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
-
 
 -- ----------------------------
 -- Table structure for warehouse
@@ -2398,7 +2669,7 @@ CREATE TABLE `warehouse`  (
   `backup4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of warehouse
@@ -2427,7 +2698,9 @@ CREATE TABLE `wx_user`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '微信用户表' ROW_FORMAT = Compact;
 
-SET FOREIGN_KEY_CHECKS = 1;
+-- ----------------------------
+-- Records of wx_user
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for zhuanyi
@@ -2444,3 +2717,9 @@ CREATE TABLE `zhuanyi`  (
   `create_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0) COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库位转移记录表' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of zhuanyi
+-- ----------------------------
+
+SET FOREIGN_KEY_CHECKS = 1;
