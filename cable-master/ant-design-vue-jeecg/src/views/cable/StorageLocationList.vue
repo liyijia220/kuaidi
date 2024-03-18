@@ -62,7 +62,7 @@
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看存储物料</a>
+              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
@@ -82,7 +82,7 @@
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看存储物料</a>
+              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
@@ -103,7 +103,7 @@
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看存储物料</a>
+              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
@@ -124,7 +124,7 @@
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看存储物料</a>
+              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
@@ -145,7 +145,7 @@
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看存储物料</a>
+              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
