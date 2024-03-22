@@ -77,6 +77,10 @@ CREATE TABLE `deliver_storage`  (
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup6` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup7` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '入库/完单表' ROW_FORMAT = Compact;
 
@@ -373,9 +377,9 @@ CREATE TABLE `material`  (
 -- ----------------------------
 -- Records of material
 -- ----------------------------
-INSERT INTO `material` VALUES (12, '2', '2', '2', '2', 2, NULL, '2024-03-22 00:00:00', '2024-03-22 13:58:19', 'admin', 'admin', '2', '2', '2', '2', '2', '2', '2', '', '');
-INSERT INTO `material` VALUES (13, '3', '3', '3', '3', 3, NULL, '2024-03-22 13:58:31', '2024-03-22 13:58:31', 'admin', 'admin', '3', '3', '3', '3', '3', '2', '2', '', '');
-INSERT INTO `material` VALUES (14, '4', '4', '4', '4', 4, NULL, '2024-03-22 00:00:00', '2024-03-22 14:07:06', 'admin', 'admin', '4', '4', '4', '4', '4kg', '2', '2', '', '');
+INSERT INTO `material` VALUES (12, '2', '2', '2', '2', 2, NULL, '2024-03-22 00:00:00', '2024-03-22 13:58:19', 'admin', 'admin', '2', '2', '2', '2', '2', NULL,NULL, NULL, NULL);
+INSERT INTO `material` VALUES (13, '3', '3', '3', '3', 3, NULL, '2024-03-22 13:58:31', '2024-03-22 13:58:31', 'admin', 'admin', '3', '3', '3', '3', '3', NULL, NULL, NULL, NULL);
+INSERT INTO `material` VALUES (14, '4', '4', '4', '4', 4, NULL, '2024-03-22 00:00:00', '2024-03-22 14:07:06', 'admin', 'admin', '4', '4', '4', '4', '4kg', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for onl_cgform_button
@@ -1171,6 +1175,10 @@ CREATE TABLE `receiving_storage`  (
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup6` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup7` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `anomalous_cause` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '异常原因',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '出库/完单表' ROW_FORMAT = Compact;
@@ -1202,6 +1210,10 @@ CREATE TABLE `send_orders`  (
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系人',
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系电话',
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup6` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup7` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单表' ROW_FORMAT = Compact;
 
@@ -1228,6 +1240,10 @@ CREATE TABLE `send_orders_subtabulation`  (
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup6` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup7` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单-车辆-员工关系表' ROW_FORMAT = Compact;
 
@@ -1853,11 +1869,6 @@ CREATE TABLE `sys_log`  (
 -- ----------------------------
 -- Records of sys_log
 -- ----------------------------
-INSERT INTO `sys_log` VALUES ('1771079662321934337', 2, '车辆表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.VehicleController.queryPageList()', NULL, '  vehicle: Vehicle(id=null, type=null, carryingCapacity=null, license=null, engineNumber=null, text=null, state=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null)  pageNo: 1  pageSize: 10', NULL, 16, 'admin', '2024-03-22 15:41:11', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771079664842711041', 2, '车保险表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.InsuranceController.queryPageList()', NULL, '  insurance: InsuranceListVo(id=null, license=null, vehicleId=null, insuraName=null, insurancePolicy=null, insuranceDate=null, insuranceDateBegin=null, insuranceDateEnd=null, strongPolicy=null, strongDate=null, strongDateBegin=null, strongDateEnd=null)  pageNo: 1  pageSize: 10', NULL, 8, 'admin', '2024-03-22 15:41:12', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771079655351001089', 2, '分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.WarehouseController.selectInfo()', NULL, '  inventoryVo: InventoryVo(id=null, pType=null, warehouseName=null, storageLocationName=null, storageLocationId=null, projectNo=null, projectName=null, serial=, materialName=null, abbreviation=null, inventoryQuantity=null, dw=null, pItemSlip=null, pAssetNo=null, ations=null, availableWeight=null, proTheorderNo=null, recyclingSpecifications=, assetNo=null)  pageNo: 1  pageSize: 5', NULL, 27, 'admin', '2024-03-22 15:41:10', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771079647566372866', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 20, 'admin', '2024-03-22 15:41:08', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771080151889485826', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 12, 'admin', '2024-03-22 15:43:08', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_permission
