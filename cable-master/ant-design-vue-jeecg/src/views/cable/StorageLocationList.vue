@@ -36,12 +36,12 @@
           </a-col>
         </a-row>
         <a-row :gutter="24">
-          <div style="display: inline-block;margin-bottom: 50px;margin-left: 20px;">
-            <span class="spa" style="background-color: white;border: 1px solid #777777">空闲</span>
-            <span class="spa" style="background-color: dodgerblue;margin-left: 10px;color: white">正常</span>
-            <span class="spa" style="background-color: orange;margin-left: 10px;color: white">饱和</span>
-            <span class="spa" style="background-color: red;margin-left: 10px;color: white">超标</span>
-          </div>
+<!--          <div style="display: inline-block;margin-bottom: 50px;margin-left: 20px;">-->
+<!--            <span class="spa" style="background-color: white;border: 1px solid #777777">空闲</span>-->
+<!--            <span class="spa" style="background-color: dodgerblue;margin-left: 10px;color: white">正常</span>-->
+<!--            <span class="spa" style="background-color: orange;margin-left: 10px;color: white">饱和</span>-->
+<!--            <span class="spa" style="background-color: red;margin-left: 10px;color: white">超标</span>-->
+<!--          </div>-->
         </a-row>
       </a-form>
     </div>
@@ -62,7 +62,7 @@
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
+
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
@@ -77,12 +77,11 @@
              <div class="stor">
                 {{storageLocation.storageLocationName}}
                <span class="spaa">
-                 {{storageLocation.percentage + '%'}}
+                 {{storageLocation.percentage + ''}}
                </span>
              </div>
             <div class="aclick">
               <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
               <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
                   <a class="a2">删</a>
               </a-popconfirm>
@@ -93,66 +92,63 @@
 
         <span v-if="storageLocation.storageLocationName != '库位'">
         <!-- 正常库位容量 60 至 80 之间为正常状态-->
-          <span v-if="storageLocation.percentage > 0 && storageLocation.percentage <= 60">
-            <div :id="storageLocation.id" class="stordiv" style="background-color: dodgerblue">
-             <div class="stor">
-                {{storageLocation.storageLocationName}}
-               <span class="spaa">
-                {{storageLocation.percentage + '%'}}
-               </span>
-             </div>
-            <div class="aclick">
-              <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
-              <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
-                  <a class="a2">删</a>
-              </a-popconfirm>
-            </div>
-          </div>
-          </span>
+<!--          <span v-if="storageLocation.percentage > 0 && storageLocation.percentage <= 60">-->
+<!--            <div :id="storageLocation.id" class="stordiv" style="background-color: dodgerblue">-->
+<!--             <div class="stor">-->
+<!--                {{storageLocation.storageLocationName}}-->
+<!--               <span class="spaa">-->
+<!--                {{storageLocation.percentage + '%'}}-->
+<!--               </span>-->
+<!--             </div>-->
+<!--            <div class="aclick">-->
+<!--              <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>-->
+<!--              <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">-->
+<!--                  <a class="a2">删</a>-->
+<!--              </a-popconfirm>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          </span>-->
           </span>
 
         <span v-if="storageLocation.storageLocationName != '库位'">
         <!-- 饱和库位容量 80 至 100 之间为饱和状态-->
-          <span v-if="storageLocation.percentage > 60 && storageLocation.percentage <= 80">
-            <div :id="storageLocation.id" class="stordiv" style="background-color: orange">
-             <div class="stor">
-               {{storageLocation.storageLocationName}}
-               <span class="spaa">
-                 {{storageLocation.percentage + '%'}}
-               </span>
-             </div>
-            <div class="aclick">
-              <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
-              <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
-                  <a class="a2">删</a>
-              </a-popconfirm>
-            </div>
-          </div>
-          </span>
+<!--          <span v-if="storageLocation.percentage > 60 && storageLocation.percentage <= 80">-->
+<!--            <div :id="storageLocation.id" class="stordiv" style="background-color: orange">-->
+<!--             <div class="stor">-->
+<!--               {{storageLocation.storageLocationName}}-->
+<!--               <span class="spaa">-->
+<!--                 {{storageLocation.percentage + '%'}}-->
+<!--               </span>-->
+<!--             </div>-->
+<!--            <div class="aclick">-->
+<!--              <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>-->
+<!--              <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">-->
+<!--                  <a class="a2">删</a>-->
+<!--              </a-popconfirm>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          </span>-->
           </span>
 
-        <span v-if="storageLocation.storageLocationName != '库位'">
-        <!-- 满仓库位容量 大于或等于100为满仓状态-->
-          <span v-if=" storageLocation.percentage > 80">
-            <div :id="storageLocation.id" class="stordiv" style="background-color: red">
-             <div class="stor">
-                {{storageLocation.storageLocationName}}
-               <span class="spaa">
-                 {{storageLocation.percentage + '%'}}
-               </span>
-             </div>
-            <div class="aclick">
-              <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>
-              <a class="a1" @click="viewDetails(storageLocation.id)">查看库存快递</a>
-              <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">
-                  <a class="a2">删</a>
-              </a-popconfirm>
-            </div>
-          </div>
-          </span>
-          </span>
+<!--        <span v-if="storageLocation.storageLocationName != '库位'">-->
+<!--        &lt;!&ndash; 满仓库位容量 大于或等于100为满仓状态&ndash;&gt;-->
+<!--          <span v-if=" storageLocation.percentage > 80">-->
+<!--            <div :id="storageLocation.id" class="stordiv" style="background-color: red">-->
+<!--             <div class="stor">-->
+<!--                {{storageLocation.storageLocationName}}-->
+<!--               <span class="spaa">-->
+<!--                 {{storageLocation.percentage + '%'}}-->
+<!--               </span>-->
+<!--             </div>-->
+<!--            <div class="aclick">-->
+<!--              <a class="a1" @click="showLocationQRCode(storageLocation.id)">库位二维码</a>-->
+<!--              <a-popconfirm title="确定要删除库位吗？" @confirm="() => hDelete(storageLocation.id)">-->
+<!--                  <a class="a2">删</a>-->
+<!--              </a-popconfirm>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          </span>-->
+<!--          </span>-->
 
         </span>
     </div>
