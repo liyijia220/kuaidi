@@ -43,7 +43,22 @@
             </template>
           </a-select>
         </a-form-item>
-<!--        <a-form-item label="容积" :labelCol="labelCol" :wrapperCol="wrapperCol">-->
+        <a-form-item label="仓库" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-select v-decorator="['warehouse', {rules: [{required: true, message: '请选择仓库'}]}]" placeholder="请选择仓库">
+            <a-select-option v-for="warehouse in warehouses" :key="warehouse.id" :value="warehouse.id">
+              {{ warehouse.name }}
+            </a-select-option>
+          </a-select>
+        </a-form-item>
+        <a-form-item label="库位" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-select v-decorator="['storageLocation', {rules: [{required: true, message: '请选择库位'}]}]" placeholder="请选择库位">
+            <a-select-option v-for="location in storageLocations" :key="location.id" :value="location.id">
+              {{ location.name }}
+            </a-select-option>
+          </a-select>
+        </a-form-item>
+
+        <!--        <a-form-item label="容积" :labelCol="labelCol" :wrapperCol="wrapperCol">-->
 <!--          <a-input v-decorator="['materialVolume',validatorRules.materialVolume]" placeholder="请输入物料容积"></a-input>-->
 <!--        </a-form-item>-->
       </a-form>

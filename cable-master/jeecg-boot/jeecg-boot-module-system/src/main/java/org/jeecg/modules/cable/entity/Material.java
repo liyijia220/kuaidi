@@ -119,7 +119,30 @@ public class Material implements Serializable {
     @Excel(name = "backup5", width = 15)
     @ApiModelProperty(value = "backup5")
     private String backup5;
-
+    /**
+     * backup6
+     */
+    @Excel(name = "backup6", width = 15)
+    @ApiModelProperty(value = "backup6")
+    private String backup6;
+    /**
+     * backup7
+     */
+    @Excel(name = "backup7", width = 15)
+    @ApiModelProperty(value = "backup5")
+    private String backup7;
+    /**
+     * backup8
+     */
+    @Excel(name = "backup8", width = 15)
+    @ApiModelProperty(value = "backup5")
+    private String backup8;
+    /**
+     * backup9
+     */
+    @Excel(name = "backup9", width = 15)
+    @ApiModelProperty(value = "backup5")
+    private String backup9;
     //==================================物料年度出入台账关系映射所需属性
 
     // 入库表属性
