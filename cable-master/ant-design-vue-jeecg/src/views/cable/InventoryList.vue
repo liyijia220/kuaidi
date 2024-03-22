@@ -179,8 +179,7 @@
             width: 147,
             scopedSlots: { customRender: 'action' }
           }
-          /*
-          {
+          /*{
             title: '项目名称',
             align: 'center',
             dataIndex: 'projectName',
