@@ -12,20 +12,29 @@
         <a-form-item label="快递单号" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="['serial',validatorRules.serial]" placeholder="请输入快递单号"></a-input> <!-- :disabled="!!model.id" -->
         </a-form-item>
-        <a-form-item label="物料名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['name',validatorRules.name]" placeholder="请输入物料名称"></a-input>
+        <a-form-item label="快递名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['name',validatorRules.name]" placeholder="请输入快递名称"></a-input>
           </a-form-item>
-          <a-form-item label="物料简称" :labelCol="labelCol" :wrapperCol="wrapperCol">
-            <a-input v-decorator="['backup1',validatorRules.backup1]" placeholder="请输入物料简称"></a-input>
+          <a-form-item label="发件人" :labelCol="labelCol" :wrapperCol="wrapperCol">
+            <a-input v-decorator="['backup1',validatorRules.backup1]" placeholder="请输入发件人手机号"></a-input>
           </a-form-item>
-          <a-form-item label="规格型号" :labelCol="labelCol" :wrapperCol="wrapperCol">
-            <a-input v-decorator="['ations',validatorRules.ations]" placeholder="请输入规格型号"></a-input>
+          <a-form-item label="发件人手机号" :labelCol="labelCol" :wrapperCol="wrapperCol">
+            <a-input v-decorator="['ations',validatorRules.ations]" placeholder="请输入发件人手机号"></a-input>
           </a-form-item>
-        <a-form-item label="供应商名" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['supplier',validatorRules.supplier]" placeholder="请输入供应商名称"></a-input>
+        <a-form-item label="收件人" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['supplier',validatorRules.supplier]" placeholder="收件人"></a-input>
         </a-form-item>
-        <a-form-item label="单位" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select v-decorator="['unit',validatorRules.unit]" placeholder="单位">
+        <a-form-item label="收件人手机号" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['backup2',validatorRules.backup2]" placeholder="收件人手机号"></a-input>
+        </a-form-item>
+        <a-form-item label="始发地" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['backup3',validatorRules.backup3]" placeholder="始发地"></a-input>
+        </a-form-item>
+        <a-form-item label="目的地" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['backup4',validatorRules.backup4]" placeholder="目的地"></a-input>
+        </a-form-item>
+        <a-form-item label="体积单位" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-select v-decorator="['unit',validatorRules.unit]" placeholder="体积单位">
             <template v-for="(unit,index) in unitList">
               <a-select-option v-bind:value="unit.itemValue">{{unit.itemText}}</a-select-option>
             </template>
@@ -72,8 +81,8 @@
         unitList: {},
         validatorRules: {
           serial: { rules: [{ required: true, message: '请输入快递单号' }] },
-          name: { rules: [{ required: true, message: '请输入物料名称' }] },
-          unit: { rules: [{ required: false, message: '请选择单位' }] },
+          name: { rules: [{ required: true, message: '请输入快递名称' }] },
+          unit: { rules: [{ required: false, message: '请选择体积单位' }] },
           materialVolume: { rules: [{ required: false, message: '请输入容积' }] },
         },
         url: {

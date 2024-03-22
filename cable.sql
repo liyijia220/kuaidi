@@ -11,7 +11,7 @@
  Target Server Version : 50744
  File Encoding         : 65001
 
- Date: 18/03/2024 19:05:41
+ Date: 22/03/2024 11:43:22
 */
 
 SET NAMES utf8mb4;
@@ -364,7 +364,7 @@ CREATE TABLE `material`  (
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '物料表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '物料表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of material
@@ -1042,7 +1042,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1710742640491', 1710759939804, 10000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1711075386073', 1711079002954, 10000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -1877,6 +1877,27 @@ INSERT INTO `sys_log` VALUES ('1769679182588981249', 2, '计划表4-分页列表
 INSERT INTO `sys_log` VALUES ('1769679820660060162', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 9, 'admin', '2024-03-18 18:58:43', NULL, NULL);
 INSERT INTO `sys_log` VALUES ('1769679824233607169', 2, '计划表2-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan2Controller.queryPageList()', NULL, '  plan2: Plan2(id=null, planType=null, site=null, equipmentName=null, projectNo=null, retiredAssetNo=null, capacity=null, model=null, assetStatus=null, retiredDate=null, receiptIs=null, theLocation=null, disposalWay=null, assetNo=null, projectType=null, equipmentOwners=null, address=null, note=null, equipmentNo=null, disposed=null, receiptNo=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 7, 'admin', '2024-03-18 18:58:44', NULL, NULL);
 INSERT INTO `sys_log` VALUES ('1769679829824614401', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-18 18:58:45', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771005982648705025', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 4, 'admin', '2024-03-22 10:48:25', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771006762525007874', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 5, 'admin', '2024-03-22 10:51:31', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771006767985991681', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 10:51:32', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771006778232676353', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 10, 'admin', '2024-03-22 10:51:34', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771006960026394625', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 10:52:18', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007160920973313', 2, '派单-车辆-员工关系表-分页查询出车统计', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StatisticalReportController.getDepartureStatistics()', NULL, '  taskTime: null  pageNo: 1  pageSize: 10', NULL, 26, 'admin', '2024-03-22 10:53:06', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007252914642946', 2, '派单-车辆-员工关系表-分页查询出车统计', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.StatisticalReportController.getDepartureStatistics()', NULL, '  taskTime: null  pageNo: 1  pageSize: 10', NULL, 15, 'admin', '2024-03-22 10:53:27', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007256353972225', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 1, 'admin', '2024-03-22 10:53:28', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007453511426049', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 10:54:15', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007473061076993', 2, '分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.WarehouseController.selectInfo()', NULL, '  inventoryVo: InventoryVo(id=null, pType=null, warehouseName=null, storageLocationName=null, storageLocationId=null, projectNo=null, projectName=null, serial=, materialName=null, abbreviation=null, inventoryQuantity=null, dw=null, pItemSlip=null, pAssetNo=null, ations=null, availableWeight=null, proTheorderNo=null, recyclingSpecifications=, assetNo=null)  pageNo: 1  pageSize: 5', NULL, 16, 'admin', '2024-03-22 10:54:20', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007481537765378', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 10:54:22', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771007846450601986', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 5, 'admin', '2024-03-22 10:55:49', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771008345220456449', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 10:57:48', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771008374349897730', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 10:57:55', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019353473294337', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 3, 'admin', '2024-03-22 11:41:32', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019565252091906', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 11:42:23', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019666380955649', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 4, 'admin', '2024-03-22 11:42:47', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019708030394369', 2, '物料表-添加', 2, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.add()', NULL, '[{\"ations\":\"2\",\"backup1\":\"2\",\"createBy\":\"admin\",\"createTime\":1711078976978,\"id\":1,\"name\":\"2\",\"serial\":\"2\",\"supplier\":\"2\",\"unit\":2,\"updateBy\":\"admin\",\"updateTime\":1711078976977}]', NULL, 12, 'admin', '2024-03-22 11:42:57', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019708227526658', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 14, 'admin', '2024-03-22 11:42:57', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019727705874433', 2, '物料表-通过id删除', 4, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.delete()', NULL, '  id: 1', NULL, 33, 'admin', '2024-03-22 11:43:02', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1771019727835897857', 2, '物料表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.MaterialController.queryPageList()', NULL, '  serial: null  name: null  supplier: null  pageNo: 1  pageSize: 10', NULL, 2, 'admin', '2024-03-22 11:43:02', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_permission

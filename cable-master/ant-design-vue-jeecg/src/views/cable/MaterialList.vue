@@ -7,28 +7,28 @@
         <a-row :gutter="24">
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="快递编号">
-              <a-input v-model="queryParam.serial" placeholder="请输入快递编号"></a-input>
+            <a-form-item label="快递单号">
+              <a-input v-model="queryParam.serial" placeholder="请输入快递单号"></a-input>
             </a-form-item>
           </a-col>
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="物料名称">
-              <a-input v-model="queryParam.name" placeholder="请输入物料名称"></a-input>
+            <a-form-item label="快递名称">
+              <a-input v-model="queryParam.name" placeholder="请输入快递名称"></a-input>
             </a-form-item>
           </a-col>
 
-          <a-col :md="4" :sm="7">
-            <a-form-item label="供应商名">
-              <a-input v-model="queryParam.supplier" placeholder="请输入供应商名"></a-input>
-            </a-form-item>
-          </a-col>
+<!--          <a-col :md="4" :sm="7">-->
+<!--            <a-form-item label="目的地">-->
+<!--              <a-input v-model="queryParam.backup4" placeholder="请输入目的地"></a-input>-->
+<!--            </a-form-item>-->
+<!--          </a-col>-->
 
           <a-col :md="6" :sm="10">
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
               <a-button type="primary" @click="searchReset" icon="reload" style="margin-left: 8px">重置</a-button>
-              <a-button @click="handleAdd" type="primary" icon="plus" style="margin-left: 8px">新增物料</a-button>
+              <a-button @click="handleAdd" type="primary" icon="plus" style="margin-left: 8px">新增快递</a-button>
               <a-upload
                 name="file"
                 :showUploadList="false"
@@ -37,7 +37,7 @@
                 :action="importExcelUrl"
                 @change="handleImportExcel"
                 style="margin-left: 8px">
-                <a-button type="primary" icon="import">物料导入</a-button>
+                <a-button type="primary" icon="import">快递导入</a-button>
               </a-upload>
             </span>
           </a-col>
@@ -140,22 +140,22 @@
         // 表头
         columns: [
           {
-            title: '物料编号',
+            title: '快递单号',
             align: 'center',
             dataIndex: 'serial'
           },
           {
-            title: '物料名称',
+            title: '快递名称',
             align: 'center',
             dataIndex: 'name'
           },
           {
-            title: '物料简称',
+            title: '目的地',
             align: 'center',
-            dataIndex: 'backup1'
+            dataIndex: 'backup4'
           },
           {
-            title: '单位',
+            title: '体积单位',
             align: 'center',
             dataIndex: 'unit_dictText'
           },
