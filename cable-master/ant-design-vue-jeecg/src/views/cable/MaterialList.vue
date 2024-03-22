@@ -1,7 +1,6 @@
 <template>
   <a-card :bordered="false">
-
-    <!-- 查询区域-begin -->
+    <!-- 查询区域 -->
     <div class="table-page-search-wrapper">
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
@@ -17,13 +16,6 @@
               <a-input v-model="queryParam.name" placeholder="请输入快递名称"></a-input>
             </a-form-item>
           </a-col>
-
-<!--          <a-col :md="4" :sm="7">-->
-<!--            <a-form-item label="目的地">-->
-<!--              <a-input v-model="queryParam.backup4" placeholder="请输入目的地"></a-input>-->
-<!--            </a-form-item>-->
-<!--          </a-col>-->
-
           <a-col :md="6" :sm="10">
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
