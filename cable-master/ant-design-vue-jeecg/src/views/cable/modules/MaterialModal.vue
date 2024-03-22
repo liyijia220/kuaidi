@@ -44,17 +44,17 @@
           </a-select>
         </a-form-item>
         <a-form-item label="仓库" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select v-decorator="['warehouse', {rules: [{required: true, message: '请选择仓库'}]}]" placeholder="请选择仓库">
-            <a-select-option v-for="warehouse in warehouses" :key="warehouse.id" :value="warehouse.id">
-              {{ warehouse.name }}
-            </a-select-option>
+          <a-select v-decorator="['warehouse',validatorRules.warehouse]" placeholder="请选择仓库">
+            <template v-for="(warehouse,index) in warehouseList">
+              <a-select-option v-bind:value="warehouse.itemValue">{{warehouse.itemText}}</a-select-option>
+            </template>
           </a-select>
         </a-form-item>
         <a-form-item label="库位" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select v-decorator="['storageLocation', {rules: [{required: true, message: '请选择库位'}]}]" placeholder="请选择库位">
-            <a-select-option v-for="location in storageLocations" :key="location.id" :value="location.id">
-              {{ location.name }}
-            </a-select-option>
+          <a-select v-decorator="['storageLocation',validatorRules.storageLocation]" placeholder="请选择库位">
+            <template v-for="(storageLocation,index) in storageLocationList">
+              <a-select-option v-bind:value="storageLocation.itemValue">{{storageLocation.itemText}}</a-select-option>
+            </template>
           </a-select>
         </a-form-item>
 
@@ -97,10 +97,14 @@
         },
         confirmLoading: false,
         unitList: {},
+        warehouseList: {},
+        storageLocation: {},
         validatorRules: {
           serial: { rules: [{ required: true, message: '请输入快递单号' }] },
           name: { rules: [{ required: true, message: '请输入快递名称' }] },
           unit: { rules: [{ required: false, message: '请选择体积单位' }] },
+          warehouse: {rules: [{ required: false, message: '请选择仓库' }] },
+          storageLocation: {rules: [{ required: false, message: '请选择库位' }] },
           materialVolume: { rules: [{ required: false, message: '请输入容积' }] },
         },
         url: {
@@ -109,8 +113,11 @@
         }
       }
     },
+
     created () {
       this.unitLists();
+      this.fetchWarehouses();
+      this.fetchLocations();
     },
     methods: {
       materialJudge(rule, value, callback){
@@ -133,6 +140,18 @@
 
         }
       },
+      fetchWarehouses() {
+        // 假设getWarehouses是一个API调用函数，用于获取仓库列表
+        getWarehouses().then(response => {
+          this.warehouses = response.data;
+        });
+      },
+      fetchLocations() {
+        // 假设getLocations是一个API调用函数，用于获取库位列表
+        getLocations().then(response => {
+          this.locations = response.data;
+        });
+      },
       unitLists() {
         getAction("/sys/dictItem/getDictItemUnit").then((res) => {
           if (res.success) {
@@ -151,7 +170,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'serial','name','ations','supplier','unit', 'materialVolume', 'createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5'))
+          this.form.setFieldsValue(pick(this.model,'serial','name','ations','supplier','unit', 'materialVolume', 'createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5','Warehouse','StorageLocation','backup8','backup9'))
         })
       },
       close () {
@@ -193,7 +212,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'serial','name','ations','supplier','unit', 'materialVolume','createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5'))
+        this.form.setFieldsValue(pick(row,'serial','name','ations','supplier','unit', 'materialVolume','createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5','Warehouse','StorageLocation','backup8','backup9'))
       }
     }
   }
