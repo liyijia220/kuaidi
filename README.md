@@ -30,24 +30,24 @@
 
 > # 启动教学
 # 1. 数据库配置
-## 首先在本地创建 cable 数据库，选择好字符集编码
-## 然后在创建好的 cable 数据库下执行 cable.sql 脚本即可
+- 首先在本地创建 cable 数据库，选择好字符集编码
+- 然后在创建好的 cable 数据库下执行 cable.sql 脚本即可
 
 # 2. 后端配置
-## 进入 IDEA 工具后设置 Maven 依赖下载设置
-## 更改自己的 Maven 安装路径，用来下载项目所需的 jar 包
-## 选择后台项目的启动环境 application.yml-> dev[开发环境] 或者 prod[生产环境]
-## 然后更改对应开发环境的配置文件，如 application-dev.yml 文件
-### 配置项目启动端口号
-### 配置数据库连接信息
-### 配置 redis 连接信息
-### 配置 jeecg 专用配置文件上传路径
-## 找到 JeecgApplication 启动类启动项目即可
-## 通过访问 `http://localhost:8080/jeecg-boot/` 可以查看后台 API 接口文档
+- 进入 IDEA 工具后设置 Maven 依赖下载设置
+- 更改自己的 Maven 安装路径，用来下载项目所需的 jar 包
+- 选择后台项目的启动环境 application.yml-> dev[开发环境] 或者 prod[生产环境]
+- 然后更改对应开发环境的配置文件，如 application-dev.yml 文件
+- 配置项目启动端口号
+- 配置数据库连接信息
+- 配置 redis 连接信息
+- 配置 jeecg 专用配置文件上传路径
+- 找到 JeecgApplication 启动类启动项目即可
+- 通过访问 `http://localhost:8080/jeecg-boot/` 可以查看后台 API 接口文档
 
 # 3. 前端配置
-## 前端项目使用 VsCode 工具打开，在控制台执行 `npm install` 命令下载所需依赖
-## 配置 index.html 页面的全局配置 -> 指定后台路径
-## 配置项目根目录下的 vue.config.js 文件，指定后台路径,建立前后端对接
-## 最后配置完成后，需要前端后端同时启动才能访问项目
-前端通过 `npm run serve` 命令启动
+- 前端项目使用 VsCode 工具打开，在控制台执行 `npm install` 命令下载所需依赖
+- 配置 index.html 页面的全局配置 -> 指定后台路径
+- 配置项目根目录下的 vue.config.js 文件，指定后台路径,建立前后端对接
+- 最后配置完成后，需要前端后端同时启动才能访问项目
+- 前端通过 `npm run serve` 命令启动
