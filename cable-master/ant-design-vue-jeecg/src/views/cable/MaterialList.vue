@@ -7,8 +7,8 @@
         <a-row :gutter="24">
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="物料编号">
-              <a-input v-model="queryParam.serial" placeholder="请输入物料编号"></a-input>
+            <a-form-item label="快递编号">
+              <a-input v-model="queryParam.serial" placeholder="请输入快递编号"></a-input>
             </a-form-item>
           </a-col>
 
@@ -133,7 +133,7 @@
     },
     data() {
       return {
-        description: '物料管理',
+        description: '快递管理',
         // 查询条件
         queryParam: {},
         dataSource: [],

@@ -9,8 +9,8 @@
     cancelText="关闭">
     <a-spin :spinning="confirmLoading">
       <a-form :form="form">
-        <a-form-item label="物料编号" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['serial',validatorRules.serial]" placeholder="请输入物料编号"></a-input> <!-- :disabled="!!model.id" -->
+        <a-form-item label="快递单号" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['serial',validatorRules.serial]" placeholder="请输入快递单号"></a-input> <!-- :disabled="!!model.id" -->
         </a-form-item>
         <a-form-item label="物料名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="['name',validatorRules.name]" placeholder="请输入物料名称"></a-input>
@@ -71,7 +71,7 @@
         confirmLoading: false,
         unitList: {},
         validatorRules: {
-          serial: { rules: [{ required: true, message: '请输入物料编号' }] },
+          serial: { rules: [{ required: true, message: '请输入快递单号' }] },
           name: { rules: [{ required: true, message: '请输入物料名称' }] },
           unit: { rules: [{ required: false, message: '请选择单位' }] },
           materialVolume: { rules: [{ required: false, message: '请输入容积' }] },
@@ -100,7 +100,7 @@
             if (res.success) {
               callback()
             } else {
-              callback("该物料编号已存在!")
+              callback("该快递单号已存在!")
             }
           })
 
