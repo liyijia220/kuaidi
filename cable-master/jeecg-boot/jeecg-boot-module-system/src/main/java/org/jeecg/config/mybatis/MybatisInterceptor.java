@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
  * mybatis拦截器，自动注入创建人、创建时间、修改人、修改时间
  *
  * @Author scott
- * @Date 2019-01-19
+ * @Date 2024-01-19
  */
 @Slf4j
 @Component

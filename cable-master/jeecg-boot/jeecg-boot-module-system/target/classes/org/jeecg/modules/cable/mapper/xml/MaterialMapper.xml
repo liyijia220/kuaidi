@@ -735,7 +735,7 @@
 
     <sql id="Base_Column_list">
         id, serial, name, ations, supplier, unit, material_volume, create_time, update_time, create_by,
-        update_by, backup1, backup2, backup3, backup4, backup5
+        update_by, backup1, backup2, backup3, backup4, backup5,backup6,backup7,backup8,backup9
     </sql>
 
     <select id="getMaterialPageList" resultType="org.jeecg.modules.cable.entity.Material">
@@ -756,10 +756,9 @@
         ORDER BY update_time DESC
     </select>
 
-    <insert id="saveMaterial" parameterType="org.jeecg.modules.cable.entity.Material" useGeneratedKeys="true"
-            keyProperty="id">
-        INSERT INTO material(serial,name,ations,supplier,unit,material_volume,create_time,update_time)
-        VALUES(#{serial},#{name},#{ations},#{supplier},#{unit},#{materialVolume},#{createTime},#{updateTime})
+    <insert id="saveMaterial" parameterType="org.jeecg.modules.cable.entity.Material" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO material (serial, name, ations, supplier, unit, material_volume, create_time, update_time, backup6, backup7)
+        VALUES (#{serial}, #{name}, #{ations}, #{supplier}, #{unit}, #{materialVolume}, #{createTime}, #{updateTime}, #{backup6}, #{backup7})
     </insert>
 
     <update id="editMaterial" parameterType="org.jeecg.modules.cable.entity.Material">
@@ -782,6 +781,12 @@
             </if>
             <if test="updateBy != null">
                 update_by = #{updateBy},
+            </if>
+            <if test="backup6 != null">
+                backup6 = #{backup6},
+            </if>
+            <if test="backup7 != null">
+                backup7 = #{backup7},
             </if>
         </set>
         WHERE id = #{id}
