@@ -7,14 +7,14 @@
         <a-row :gutter="24">
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="物料编号">
-              <a-input placeholder="请输入物料编号" v-model="queryParam.serial"></a-input>
+            <a-form-item label="快递单号">
+              <a-input placeholder="请输入快递单号" v-model="queryParam.serial"></a-input>
             </a-form-item>
           </a-col>
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="物料名称">
-              <a-input placeholder="请输入物料名称" v-model="queryParam.materialName"></a-input>
+            <a-form-item label="快递名称">
+              <a-input placeholder="请输入快递名称" v-model="queryParam.materialName"></a-input>
             </a-form-item>
           </a-col>
 
@@ -136,27 +136,34 @@
         // 表头
         columns: [
           {
-            title: '物料编号',
+            title: '快递单号',
             align: 'center',
             dataIndex: 'serial',
           },
           {
-            title: '物料名称',
+            title: '快递名称',
             align: 'center',
             dataIndex: 'materialName',
           },
           {
-            title: '库存数',
+            title: '仓库',
             align: 'center',
-            dataIndex: 'inventoryQuantity',
-          },
-          {
-            title: '单位',
+            dataIndex: 'projectName',
+            scopedSlots: { customRender: 'factoryText' }
+          },{
+            title: '库位',
             align: 'center',
-            dataIndex: 'dw_dictText',
+            dataIndex: 'projectName',
+            scopedSlots: { customRender: 'factoryText' }
           },
           {
             title: '重量',
+            align: 'center',
+            dataIndex: 'projectNo',
+            scopedSlots: { customRender: 'factoryText' }
+          },
+          {
+            title: '体积单位',
             align: 'center',
             dataIndex: 'availableWeight',
             customRender: (text,record) => {
@@ -172,36 +179,7 @@
             width: 147,
             scopedSlots: { customRender: 'action' }
           }
-          /*{
-            title: '计划类型',
-            align: 'center',
-            dataIndex: 'ptype',
-            scopedSlots: { customRender: 'factoryText' }
-          },
-          {
-            title: '资产编号',
-            align: 'center',
-            dataIndex: 'passetNo',
-            scopedSlots: { customRender: 'factoryText' }
-          },
-          {
-            title: '交接单号',
-            align: 'center',
-            dataIndex: 'pitemSlip',
-            scopedSlots: { customRender: 'factoryText' }
-          },
-          {
-            title: '仓库名称',
-            align: 'center',
-            dataIndex: 'warehouseName',
-            scopedSlots: { customRender: 'factoryText' }
-          },
-          {
-            title: '项目编码',
-            align: 'center',
-            dataIndex: 'projectNo',
-            scopedSlots: { customRender: 'factoryText' }
-          },
+          /*
           {
             title: '项目名称',
             align: 'center',

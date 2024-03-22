@@ -16,22 +16,25 @@
           <a-input v-decorator="['name',validatorRules.name]" placeholder="请输入快递名称"></a-input>
           </a-form-item>
           <a-form-item label="发件人" :labelCol="labelCol" :wrapperCol="wrapperCol">
-            <a-input v-decorator="['backup1',validatorRules.backup1]" placeholder="请输入发件人手机号"></a-input>
+            <a-input v-decorator="['backup1',validatorRules.backup1]" placeholder="请输入发件人"></a-input>
           </a-form-item>
           <a-form-item label="发件人手机号" :labelCol="labelCol" :wrapperCol="wrapperCol">
             <a-input v-decorator="['ations',validatorRules.ations]" placeholder="请输入发件人手机号"></a-input>
           </a-form-item>
         <a-form-item label="收件人" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['supplier',validatorRules.supplier]" placeholder="收件人"></a-input>
+          <a-input v-decorator="['supplier',validatorRules.supplier]" placeholder="请输入收件人"></a-input>
         </a-form-item>
         <a-form-item label="收件人手机号" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['backup2',validatorRules.backup2]" placeholder="收件人手机号"></a-input>
+          <a-input v-decorator="['backup2',validatorRules.backup2]" placeholder="请输入收件人手机号"></a-input>
         </a-form-item>
         <a-form-item label="始发地" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['backup3',validatorRules.backup3]" placeholder="始发地"></a-input>
+          <a-input v-decorator="['backup3',validatorRules.backup3]" placeholder="请输入始发地"></a-input>
         </a-form-item>
         <a-form-item label="目的地" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="['backup4',validatorRules.backup4]" placeholder="目的地"></a-input>
+          <a-input v-decorator="['backup4',validatorRules.backup4]" placeholder="请输入目的地"></a-input>
+        </a-form-item>
+        <a-form-item label="重量" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['backup5',validatorRules.backup5]" placeholder="请输入重量"></a-input>
         </a-form-item>
         <a-form-item label="体积单位" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-select v-decorator="['unit',validatorRules.unit]" placeholder="体积单位">
