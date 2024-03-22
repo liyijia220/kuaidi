@@ -18,63 +18,11 @@
             </a-form-item>
           </a-col>
 
-          <!--<a-col :md="4" :sm="7">
-            <a-form-item label="规格型号">
-              <a-input placeholder="请输入规格型号" v-model="queryParam.ations"></a-input>
-            </a-form-item>
-          </a-col>-->
-
-          <!--<a-col :md="4" :sm="7">
-            <a-form-item label="计划类型">
-              <a-select v-model="queryParam.pType" placeholder="请选择计划类型">
-                <a-select-option value="配变电">配变电</a-select-option>
-                <a-select-option value="其他">其他</a-select-option>
-                <a-select-option value="电缆">电缆</a-select-option>
-                <a-select-option value="线路">线路</a-select-option>
-                <a-select-option value="备品">备品</a-select-option>
-                <a-select-option value="新品">新品</a-select-option>
-                <a-select-option value="抢修">抢修</a-select-option>
-                <a-select-option value="临措">临措</a-select-option>
-              </a-select>
-            </a-form-item>
-          </a-col>
-
-          <a-col :md="4" :sm="7">
-            <a-form-item label="资产编号">
-              <a-input placeholder="请输入资产编号" v-model="queryParam.pAssetNo"></a-input>
-            </a-form-item>
-          </a-col>
-
-          <a-col :md="4" :sm="7">
-            <a-form-item label="交接单号">
-              <a-input placeholder="请输入交接单号" v-model="queryParam.pItemSlip"></a-input>
-            </a-form-item>
-          </a-col>
-
-          <a-col :md="4" :sm="7">
-            <a-form-item label="仓库名称">
-              <a-input placeholder="请输入仓库名称" v-model="queryParam.warehouseName"></a-input>
-            </a-form-item>
-          </a-col>
-
-          <template v-if="toggleSearchStatus">
-
-            <a-col :md="6" :sm="7">
-              <a-form-item label="项目编号/工程账号">
-                <a-input placeholder="请输入项目编号/工程账号" v-model="queryParam.projectNo"></a-input>
-              </a-form-item>
-            </a-col>
-
-          </template>-->
-
           <a-col :md="6" :sm="10">
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
               <a-button type="primary" @click="searchReset" icon="reload" style="margin-left: 8px">重置</a-button>
-              <!--<a @click="handleToggleSearch" style="margin-left: 8px">
-                {{ toggleSearchStatus ? '收起' : '展开' }}
-                <a-icon :type="toggleSearchStatus ? 'up' : 'down'"/>
-              </a>-->
+
             </span>
           </a-col>
 
@@ -84,13 +32,7 @@
     <!-- 查询区域-END -->
     <!-- table区域-begin -->
     <div>
-      <!--<div class="ant-alert ant-alert-info" style="margin-bottom: 16px;">
-        <i class="anticon anticon-info-circle ant-alert-icon"></i> 已选择 <a style="font-weight: 600">{{
-        selectedRowKeys.length }}</a>项
-        <a style="margin-left: 24px" @click="onClearSelected">清空</a>
-      </div>
 
-      :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"-->
       <a-table
         ref="table"
         size="middle"
