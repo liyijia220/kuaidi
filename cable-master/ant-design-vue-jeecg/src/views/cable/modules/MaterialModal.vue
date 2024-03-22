@@ -36,6 +36,12 @@
         <a-form-item label="重量" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="['backup5',validatorRules.backup5]" placeholder="请输入重量"></a-input>
         </a-form-item>
+        <a-form-item label="所在仓库" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="['backup6',validatorRules.backup6]" placeholder="请输入仓库"></a-input>
+        </a-form-item>
+        <a-form-item label="库位" :labelCol="labelCol" :wrapperCol="wrapperCol">
+        <a-input v-decorator="['backup7',validatorRules.backup7]" placeholder="请输入库位"></a-input>
+      </a-form-item>
         <a-form-item label="体积单位" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-select v-decorator="['unit',validatorRules.unit]" placeholder="体积单位">
             <template v-for="(unit,index) in unitList">
@@ -43,22 +49,8 @@
             </template>
           </a-select>
         </a-form-item>
-        <a-form-item label="仓库" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select v-decorator="['warehouse',validatorRules.warehouse]" placeholder="请选择仓库">
-            <template v-for="(warehouse,index) in warehouseList">
-              <a-select-option v-bind:value="warehouse.itemValue">{{warehouse.itemText}}</a-select-option>
-            </template>
-          </a-select>
-        </a-form-item>
-        <a-form-item label="库位" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select v-decorator="['storageLocation',validatorRules.storageLocation]" placeholder="请选择库位">
-            <template v-for="(storageLocation,index) in storageLocationList">
-              <a-select-option v-bind:value="storageLocation.itemValue">{{storageLocation.itemText}}</a-select-option>
-            </template>
-          </a-select>
-        </a-form-item>
 
-        <!--        <a-form-item label="容积" :labelCol="labelCol" :wrapperCol="wrapperCol">-->
+<!--        <a-form-item label="容积" :labelCol="labelCol" :wrapperCol="wrapperCol">-->
 <!--          <a-input v-decorator="['materialVolume',validatorRules.materialVolume]" placeholder="请输入物料容积"></a-input>-->
 <!--        </a-form-item>-->
       </a-form>
@@ -97,14 +89,10 @@
         },
         confirmLoading: false,
         unitList: {},
-        warehouseList: {},
-        storageLocation: {},
         validatorRules: {
           serial: { rules: [{ required: true, message: '请输入快递单号' }] },
           name: { rules: [{ required: true, message: '请输入快递名称' }] },
           unit: { rules: [{ required: false, message: '请选择体积单位' }] },
-          warehouse: {rules: [{ required: false, message: '请选择仓库' }] },
-          storageLocation: {rules: [{ required: false, message: '请选择库位' }] },
           materialVolume: { rules: [{ required: false, message: '请输入容积' }] },
         },
         url: {
@@ -113,11 +101,8 @@
         }
       }
     },
-
     created () {
       this.unitLists();
-      this.fetchWarehouses();
-      this.fetchLocations();
     },
     methods: {
       materialJudge(rule, value, callback){
@@ -140,18 +125,6 @@
 
         }
       },
-      fetchWarehouses() {
-        // 假设getWarehouses是一个API调用函数，用于获取仓库列表
-        getWarehouses().then(response => {
-          this.warehouses = response.data;
-        });
-      },
-      fetchLocations() {
-        // 假设getLocations是一个API调用函数，用于获取库位列表
-        getLocations().then(response => {
-          this.locations = response.data;
-        });
-      },
       unitLists() {
         getAction("/sys/dictItem/getDictItemUnit").then((res) => {
           if (res.success) {
@@ -170,7 +143,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'serial','name','ations','supplier','unit', 'materialVolume', 'createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5','Warehouse','StorageLocation','backup8','backup9'))
+          this.form.setFieldsValue(pick(this.model,'serial','name','ations','supplier','unit', 'materialVolume', 'createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5','backup6','backup7','backup8','backup9'))
         })
       },
       close () {
@@ -212,7 +185,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'serial','name','ations','supplier','unit', 'materialVolume','createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5','Warehouse','StorageLocation','backup8','backup9'))
+        this.form.setFieldsValue(pick(row,'serial','name','ations','supplier','unit', 'materialVolume','createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5','backup6','backup7','backup8','backup9'))
       }
     }
   }

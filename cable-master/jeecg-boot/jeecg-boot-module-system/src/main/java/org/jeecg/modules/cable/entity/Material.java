@@ -120,17 +120,17 @@ public class Material implements Serializable {
     @ApiModelProperty(value = "backup5")
     private String backup5;
     /**
-     * Warehouse
+     * backup6
      */
-    @Excel(name = "Warehouse", width = 15)
-    @ApiModelProperty(value = "Warehouse")
-    private String Warehouse;
+    @Excel(name = "backup6", width = 15)
+    @ApiModelProperty(value = "backup6")
+    private String backup6;
     /**
-     * StorageLocation
+     * backup7
      */
-    @Excel(name = "StorageLocation", width = 15)
-    @ApiModelProperty(value = "StorageLocation")
-    private String StorageLocation;
+    @Excel(name = "backup7", width = 15)
+    @ApiModelProperty(value = "backup7")
+    private String backup7;
     /**
      * backup8
      */

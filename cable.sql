@@ -363,8 +363,8 @@ CREATE TABLE `material`  (
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `Warehouse` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `StorageLocation` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup6` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup7` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -373,9 +373,9 @@ CREATE TABLE `material`  (
 -- ----------------------------
 -- Records of material
 -- ----------------------------
-INSERT INTO `material` VALUES (12, '2', '2', '2', '2', 2, NULL, '2024-03-22 00:00:00', '2024-03-22 13:58:19', 'admin', 'admin', '2', '2', '2', '2', '2', '', '', '', '');
-INSERT INTO `material` VALUES (13, '3', '3', '3', '3', 3, NULL, '2024-03-22 13:58:31', '2024-03-22 13:58:31', 'admin', 'admin', '3', '3', '3', '3', '3', '', '', '', '');
-INSERT INTO `material` VALUES (14, '4', '4', '4', '4', 4, NULL, '2024-03-22 00:00:00', '2024-03-22 14:07:06', 'admin', 'admin', '4', '4', '4', '4', '4kg', '', '', '', '');
+INSERT INTO `material` VALUES (12, '2', '2', '2', '2', 2, NULL, '2024-03-22 00:00:00', '2024-03-22 13:58:19', 'admin', 'admin', '2', '2', '2', '2', '2', '2', '2', '', '');
+INSERT INTO `material` VALUES (13, '3', '3', '3', '3', 3, NULL, '2024-03-22 13:58:31', '2024-03-22 13:58:31', 'admin', 'admin', '3', '3', '3', '3', '3', '2', '2', '', '');
+INSERT INTO `material` VALUES (14, '4', '4', '4', '4', 4, NULL, '2024-03-22 00:00:00', '2024-03-22 14:07:06', 'admin', 'admin', '4', '4', '4', '4', '4kg', '2', '2', '', '');
 
 -- ----------------------------
 -- Table structure for onl_cgform_button
