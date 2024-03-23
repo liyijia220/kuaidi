@@ -5,43 +5,43 @@
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
 
+<!--          <a-col :md="4" :sm="7">-->
+<!--            <a-form-item label="资产编号">-->
+<!--              <a-input placeholder="请输入资产编号" v-model="queryParam.assetNo"></a-input>-->
+<!--            </a-form-item>-->
+<!--          </a-col>-->
+
           <a-col :md="4" :sm="7">
-            <a-form-item label="资产编号">
-              <a-input placeholder="请输入资产编号" v-model="queryParam.assetNo"></a-input>
+            <a-form-item label="公告标题">
+              <a-input placeholder="请输入公告标题" v-model="queryParam.projectNo"></a-input>
             </a-form-item>
           </a-col>
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="项目编号">
-              <a-input placeholder="请输入项目编号" v-model="queryParam.projectNo"></a-input>
+            <a-form-item label="发布人">
+              <a-input placeholder="发布人" v-model="queryParam.site"></a-input>
             </a-form-item>
           </a-col>
 
-          <a-col :md="4" :sm="7">
-            <a-form-item label="项目名称">
-              <a-input placeholder="请输入站点名" v-model="queryParam.site"></a-input>
-            </a-form-item>
-          </a-col>
-
-          <template v-if="true">
+<!--          <template v-if="true">-->
             <!--          <template v-if="toggleSearchStatus">-->
 
-            <a-col :md="4" :sm="7">
-              <a-form-item label="设备名">
-                <a-input placeholder="请输入设备名" v-model="queryParam.equipmentName"></a-input>
-              </a-form-item>
-            </a-col>
+<!--            <a-col :md="4" :sm="7">-->
+<!--              <a-form-item label="设备名">-->
+<!--                <a-input placeholder="请输入设备名" v-model="queryParam.equipmentName"></a-input>-->
+<!--              </a-form-item>-->
+<!--            </a-col>-->
 
-            <a-col :md="4" :sm="7">
-              <a-form-item label="完成状态">
-                <a-select v-model="queryParam.completeState" placeholder="请选择完成状态">
-                  <template v-for="(types,index) in completeStates">
-                    <a-select-option v-bind:value="types.itemValue">{{types.itemText}}</a-select-option>
-                  </template>
-                </a-select>
-              </a-form-item>
-            </a-col>
-          </template>
+<!--            <a-col :md="4" :sm="7">-->
+<!--              <a-form-item label="完成状态">-->
+<!--                <a-select v-model="queryParam.completeState" placeholder="请选择完成状态">-->
+<!--                  <template v-for="(types,index) in completeStates">-->
+<!--                    <a-select-option v-bind:value="types.itemValue">{{types.itemText}}</a-select-option>-->
+<!--                  </template>-->
+<!--                </a-select>-->
+<!--              </a-form-item>-->
+<!--            </a-col>-->
+<!--          </template>-->
 
           <a-col :md="7" :sm="10">
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
@@ -55,16 +55,16 @@
               </a-upload>
               <a-button style="margin-left: 8px" type="primary" icon="download"
                         @click="showExportPlan2Modal">导出</a-button>
-              <a-button @click="TheSameDay" icon="search" type="primary"
-                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">今日派单</a-button>
-                <a-button @click="mergePlan" icon="search" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并派单</a-button>
-               <a-button @click="completePlan" icon="check-circle" type="primary"
-                         style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并完单</a-button>
-               <a-button @click="assignsJL" icon="check-circle" type="primary"
-                         style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">派单记录</a-button>
-                <a-button @click="assignsWD" icon="check-circle" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">完单记录</a-button>
+<!--              <a-button @click="TheSameDay" icon="search" type="primary"-->
+<!--                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">今日派单</a-button>-->
+<!--                <a-button @click="mergePlan" icon="search" type="primary"-->
+<!--                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并派单</a-button>-->
+<!--               <a-button @click="completePlan" icon="check-circle" type="primary"-->
+<!--                         style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并完单</a-button>-->
+<!--               <a-button @click="assignsJL" icon="check-circle" type="primary"-->
+<!--                         style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">派单记录</a-button>-->
+<!--                <a-button @click="assignsWD" icon="check-circle" type="primary"-->
+<!--                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">完单记录</a-button>-->
               <a-modal
                 v-model="plan2ExportModal_visible"
                 :width=700 style="margin-top: 150px">
@@ -80,14 +80,14 @@
                     <j-date v-model="queryParam.endTime" placeholder="结束日期" showTime="true"
                             dateFormat="YYYY-MM-DD HH:mm:ss"></j-date>
                   </a-form-item>
-                  <a-form-item label="导出反馈说明" style="margin-top: 20px">
-                    <a-input v-model="queryParam.explain" placeholder="请输入反馈说明" style="width: 370px"></a-input>
+                  <a-form-item label="导出备注" style="margin-top: 20px">
+                    <a-input v-model="queryParam.explain" placeholder="请输入备注" style="width: 370px"></a-input>
                   </a-form-item>
                 </a-form>
                 <!-- 自定义内容-END -->
                 <!-- 自定义页脚-begin -->
                 <template slot="footer">
-                  <a-button type="primary" @click="handleExportXls('备品计划')">导出反馈excel</a-button>
+                  <a-button type="primary" @click="handleExportXls('备品计划')">导出excel</a-button>
                   <a-button @click="handleCancelExportPlan2Modal">关闭</a-button>
                 </template>
                 <!-- 自定义页脚-END -->
@@ -109,18 +109,18 @@
       &lt;!&ndash;      <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader" :action="importExcelUrl" @change="handleImportExcel">&ndash;&gt;
       &lt;!&ndash;        <a-button type="primary" icon="import">导入</a-button>&ndash;&gt;
       &lt;!&ndash;      </a-upload>&ndash;&gt;
-      <a-dropdown v-if="selectedRowKeys.length > 0">
-        <a-menu slot="overlay">
-          <a-menu-item key="1" @click="batchDel">
-            <a-icon type="delete"/>
-            删除
-          </a-menu-item>
-        </a-menu>
-        <a-button style="margin-left: 8px"> 批量操作
-          <a-icon type="down"/>
-        </a-button>
-      </a-dropdown>
-    </div>-->
+<!--      <a-dropdown v-if="selectedRowKeys.length > 0">-->
+<!--        <a-menu slot="overlay">-->
+<!--          <a-menu-item key="1" @click="batchDel">-->
+<!--            <a-icon type="delete"/>-->
+<!--            删除-->
+<!--          </a-menu-item>-->
+<!--        </a-menu>-->
+<!--        <a-button style="margin-left: 8px"> 批量操作-->
+<!--          <a-icon type="down"/>-->
+<!--        </a-button>-->
+<!--      </a-dropdown>-->
+<!--    </div>&ndash;&gt;-->
 
     <!-- table区域-begin -->
     <div>
@@ -256,92 +256,92 @@
         queryParam: {},
         // 表头
         columns: [
+          // {
+          //   title: '退役资产编号',
+          //   align: 'center',
+          //   dataIndex: 'retiredAssetNo',
+          //   scopedSlots: {customRender: 'factoryText'}
+          // },
           {
-            title: '退役资产编号',
-            align: 'center',
-            dataIndex: 'retiredAssetNo',
-            scopedSlots: {customRender: 'factoryText'}
-          },
-          {
-            title: '项目编号',
+            title: '公告标题',
             align: 'center',
             dataIndex: 'projectNo',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '项目名称',
+            title: '发布人',
             align: 'center',
             dataIndex: 'site',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '物料描述',
+            title: '公告内容',
             align: 'center',
             dataIndex: 'backup2',
             scopedSlots: {customRender: 'factoryText'}
           },
-          {
-            title: '型号',
-            align: 'center',
-            dataIndex: 'model',
-            scopedSlots: {customRender: 'factoryText'}
-          },
-          {
-            title: '容量',
-            align: 'center',
-            dataIndex: 'capacity',
-            scopedSlots: {customRender: 'factoryText'}
-          },
-          {
-            title: '入库状态',
-            align: 'center',
-            dataIndex: '',
-            customRender: (text, record) => {
-              if (record.alreadyDeliverStorage === null || record.alreadyDeliverStorage === undefined || record.alreadyDeliverStorage === 0) return '未入库'
-              else return '已入库'
-            }
-          },
-          {
-            title: '入库数量',
-            align: 'center',
-            dataIndex: 'alreadyDeliverStorage',
-            customRender: (value, row, index) => {
-              if (value === null || value === undefined) return 0
-              else return value
-            }
-          },
-          {
-            title: '出库状态',
-            align: 'center',
-            dataIndex: '',
-            customRender: (text, record) => {
-              if (record.alreadyReceivingStorage === null || record.alreadyReceivingStorage === undefined || record.alreadyReceivingStorage === 0) return '未出库'
-              else return '已出库'
-            }
-          },
-          {
-            title: '出库数量',
-            align: 'center',
-            dataIndex: 'alreadyReceivingStorage',
-            customRender: (value, row, index) => {
-              if (value === null || value === undefined) return 0
-              else return value
-            }
-          },
-          {
-            title: '派单状态',
-            align: 'center',
-            dataIndex: 'sendOrdersState',
-            customRender: (value, row, index) => {
-              if (value === 0) return '未派单'
-              else return '已派单'
-            }
-          },
-          {
-            title: '计划状态',
-            align: 'center',
-            dataIndex: 'completeState_dictText'
-          },
+          // {
+          //   title: '型号',
+          //   align: 'center',
+          //   dataIndex: 'model',
+          //   scopedSlots: {customRender: 'factoryText'}
+          // },
+          // {
+          //   title: '容量',
+          //   align: 'center',
+          //   dataIndex: 'capacity',
+          //   scopedSlots: {customRender: 'factoryText'}
+          // },
+          // {
+          //   title: '入库状态',
+          //   align: 'center',
+          //   dataIndex: '',
+          //   customRender: (text, record) => {
+          //     if (record.alreadyDeliverStorage === null || record.alreadyDeliverStorage === undefined || record.alreadyDeliverStorage === 0) return '未入库'
+          //     else return '已入库'
+          //   }
+          // },
+          // {
+          //   title: '入库数量',
+          //   align: 'center',
+          //   dataIndex: 'alreadyDeliverStorage',
+          //   customRender: (value, row, index) => {
+          //     if (value === null || value === undefined) return 0
+          //     else return value
+          //   }
+          // },
+          // {
+          //   title: '出库状态',
+          //   align: 'center',
+          //   dataIndex: '',
+          //   customRender: (text, record) => {
+          //     if (record.alreadyReceivingStorage === null || record.alreadyReceivingStorage === undefined || record.alreadyReceivingStorage === 0) return '未出库'
+          //     else return '已出库'
+          //   }
+          // },
+          // {
+          //   title: '出库数量',
+          //   align: 'center',
+          //   dataIndex: 'alreadyReceivingStorage',
+          //   customRender: (value, row, index) => {
+          //     if (value === null || value === undefined) return 0
+          //     else return value
+          //   }
+          // },
+          // {
+          //   title: '派单状态',
+          //   align: 'center',
+          //   dataIndex: 'sendOrdersState',
+          //   customRender: (value, row, index) => {
+          //     if (value === 0) return '未派单'
+          //     else return '已派单'
+          //   }
+          // },
+          // {
+          //   title: '计划状态',
+          //   align: 'center',
+          //   dataIndex: 'completeState_dictText'
+          // },
           {
             title: '操作',
             dataIndex: 'action',

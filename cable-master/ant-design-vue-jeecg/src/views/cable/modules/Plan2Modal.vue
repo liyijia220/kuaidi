@@ -9,76 +9,81 @@
     <a-spin :spinning="confirmLoading">
       <a-form :form="form" style="margin-top: 20px;margin-left: 25px">
 
-        <a-form-item label="新资产编号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <a-input v-decorator="['assetNo', validatorRules.assetNo]" placeholder="请输入新资产编号"  class="inupt_b_a"></a-input>
+<!--        <a-form-item label="新资产编号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">-->
+<!--          <a-input v-decorator="['assetNo', validatorRules.assetNo]" placeholder="请输入新资产编号"  class="inupt_b_a"></a-input>-->
+<!--        </a-form-item>-->
+        <a-form-item label="公告标题" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_d">
+          <a-input v-decorator="['projectNo', validatorRules.projectNo]" placeholder="请输入公告标题"  class="inupt_b_a"></a-input>
         </a-form-item>
-        <a-form-item label="工程项目编号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_d">
-          <a-input v-decorator="['projectNo', validatorRules.projectNo]" placeholder="请输入工程项目编号"  class="inupt_b_a"></a-input>
+        <a-form-item label="发布人" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
+          <a-input v-decorator="['site']" placeholder="请输入发布人" ></a-input>
         </a-form-item>
-        <a-form-item label="站点" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['site']" placeholder="请输入站点" ></a-input>
+<!--        <a-form-item label="设备名" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['equipmentName']" placeholder="请输入设备名" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="退役设备编号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">-->
+<!--          <a-input v-decorator="['retiredAssetNo']" placeholder="请输入退役设备编号" class="inupt_b_a"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="容量" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['capacity']" placeholder="请输入容量" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="型号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['model']" placeholder="请输入型号" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="ERP现资产状态" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_d">-->
+<!--          <a-input v-decorator="['assetStatus']" placeholder="请输入ERP现资产状态"  class="inupt_b_a"></a-input>-->
+<!--        </a-form-item>-->
+        <a-form-item label="发布时间" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
+          <j-date placeholder="请选择发布时间" v-decorator="['retiredDate']" :trigger-change="true"  class="inupt_b_a"/>
         </a-form-item>
-        <a-form-item label="设备名" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['equipmentName']" placeholder="请输入设备名" ></a-input>
-        </a-form-item>
-        <a-form-item label="退役设备编号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <a-input v-decorator="['retiredAssetNo']" placeholder="请输入退役设备编号" class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="容量" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['capacity']" placeholder="请输入容量" ></a-input>
-        </a-form-item>
-        <a-form-item label="型号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['model']" placeholder="请输入型号" ></a-input>
-        </a-form-item>
-        <a-form-item label="ERP现资产状态" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_d">
-          <a-input v-decorator="['assetStatus']" placeholder="请输入ERP现资产状态"  class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="退役时间" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <j-date placeholder="请选择退役时间" v-decorator="['retiredDate']" :trigger-change="true"  class="inupt_b_a"/>
-        </a-form-item>
-        <a-form-item label="是否有入库单" :labelCol="labelCol" :wrapperCol="wrapperCol"  class="inupt_c">
-          <a-input v-decorator="['receiptIs']" placeholder="请输入是否有入库单"  class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="库存地点" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">
-          <a-input v-decorator="['theLocation']" placeholder="请输入库存地点" style="width: 550px"></a-input>
-        </a-form-item>
-        <a-form-item label="处置方式" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['disposalWay']" placeholder="请输入处置方式" ></a-input>
-        </a-form-item>
-        <a-form-item label="项目分类" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['projectType']" placeholder="请输入项目分类"></a-input>
-        </a-form-item>
-        <a-form-item label="设备主人" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['equipmentOwners']" placeholder="请输入设备主人" ></a-input>
-        </a-form-item>
-        <a-form-item label="地址" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">
-          <a-input v-decorator="['address']" placeholder="请输入地址" style="width: 550px"></a-input>
-        </a-form-item>
-        <a-form-item label="备注" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">
-          <a-input v-decorator="['note']" placeholder="请输入备注" style="width: 550px"></a-input>
-        </a-form-item>
-        <a-form-item label="设备号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['equipmentNo']" placeholder="请输入设备号" ></a-input>
-        </a-form-item>
-        <a-form-item label="退役但未处置" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <a-input v-decorator="['disposed']" placeholder="请输入实物已退役但未处置"  class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="入库单号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['receiptNo']" placeholder="请输入入库单号" ></a-input>
-        </a-form-item>
-        <a-form-item label="物料描述" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['backup2']" placeholder="请输入物料描述" ></a-input>
-        </a-form-item>
-        <a-form-item label="物料代码" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['backup3']" placeholder="请输入物料代码" ></a-input>
-        </a-form-item>
-        <a-form-item label="完成状态" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-select v-decorator="['completeState', validatorRules.completeState]" class="inupt_b_a" style="width: 220px" placeholder="请选择完成状态">
+        <a-form-item label="时效状态" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
+          <a-select v-decorator="['completeState', validatorRules.completeState]" class="inupt_b_a" style="width: 220px" placeholder="请选择时效状态">
             <template v-for="(types,index) in completeStates">
               <a-select-option v-bind:value="types.itemValue">{{types.itemText}}</a-select-option>
             </template>
           </a-select>
         </a-form-item>
+<!--        <a-form-item label="是否有入库单" :labelCol="labelCol" :wrapperCol="wrapperCol"  class="inupt_c">-->
+<!--          <a-input v-decorator="['receiptIs']" placeholder="请输入是否有入库单"  class="inupt_b_a"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="库存地点" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">-->
+<!--          <a-input v-decorator="['theLocation']" placeholder="请输入库存地点" style="width: 550px"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="处置方式" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['disposalWay']" placeholder="请输入处置方式" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="项目分类" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['projectType']" placeholder="请输入项目分类"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="设备主人" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['equipmentOwners']" placeholder="请输入设备主人" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="地址" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">-->
+<!--          <a-input v-decorator="['address']" placeholder="请输入地址" style="width: 550px"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="备注" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">-->
+<!--          <a-input v-decorator="['note']" placeholder="请输入备注" style="width: 550px"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="设备号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['equipmentNo']" placeholder="请输入设备号" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="退役但未处置" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">-->
+<!--          <a-input v-decorator="['disposed']" placeholder="请输入实物已退役但未处置"  class="inupt_b_a"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="入库单号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['receiptNo']" placeholder="请输入入库单号" ></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="公告内容" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['backup2']" placeholder="请输入公告内容" ></a-input>-->
+<!--        </a-form-item>-->
+        <a-form-item label="公告内容" :labelCol="labelCol" :wrapperCol="wrapperCol" class="input_a">
+          <a-textarea v-decorator="['backup2']" placeholder="请输入公告内容" auto-size/>
+        </a-form-item>
+
+<!--        <a-form-item label="物料代码" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['backup3']" placeholder="请输入物料代码" ></a-input>-->
+<!--        </a-form-item>-->
+
 
       </a-form>
     </a-spin>
@@ -96,7 +101,7 @@
 
   export default {
     name: "Plan2Modal",
-    components: { 
+    components: {
       JDate,
       JSearchSelectTag
     },
@@ -118,7 +123,7 @@
         confirmLoading: false,
         validatorRules: {
           planType: { rules: [{ required: true, message: '请输入计划类型' }] },
-          projectNo: { rules: [{ required: true, message: '请输入工程编号' }] },
+          projectNo: { rules: [{ required: true, message: '请输入公告标题' }] },
           assetNo: { rules: [{ required: false, message: '请输入新资产编号' }] },
           completeState: { rules: [{ required: true, message: '请选择完成状态' }] },
         },
@@ -189,7 +194,7 @@
               that.close();
             })
           }
-         
+
         })
       },
       handleCancel () {
@@ -199,7 +204,7 @@
         this.form.setFieldsValue(pick(row,'planType','site','equipmentName','projectNo','retiredAssetNo','capacity','model','assetStatus','retiredDate','receiptIs','theLocation','disposalWay','assetNo','projectType','equipmentOwners','address','note','equipmentNo','disposed','receiptNo','alreadyDeliverStorage','alreadyReceivingStorage','sendOrdersState','completeState','createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5'))
       },
 
-      
+
     }
   }
 </script>

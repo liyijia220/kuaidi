@@ -75,7 +75,7 @@ public class Plan1Controller extends JeecgController<Plan1, IPlan1Service> {
     public Result<?> getPlan1ReceivingStorageList(@RequestParam(name = "ids") String ids) {
         List<Plan1Vo> list = plan1Service.getPlan1ReceivingStorageList(Arrays.asList(ids.split(",")));
         for (Plan1Vo item : list) {
-            if (!list.get(0).getProjectNo().equals(item.getProjectNo())) return Result.error("工程账号必须一致");
+            if (!list.get(0).getProjectNo().equals(item.getProjectNo())) return Result.error("目的地必须一致");
         }
         return Result.ok(list);
     }
@@ -87,7 +87,7 @@ public class Plan1Controller extends JeecgController<Plan1, IPlan1Service> {
     public Result<?> getPlan1DeliverStorage(@RequestParam(name = "ids") String ids) {
         List<Plan1> list = plan1Service.getPlan1DeliverStorage(Arrays.asList(ids.split(",")));
         for (Plan1 item : list) {
-            if (!list.get(0).getProjectNo().equals(item.getProjectNo())) return Result.error("工程账号必须一致");
+            if (!list.get(0).getProjectNo().equals(item.getProjectNo())) return Result.error("目的地必须一致");
         }
         return Result.ok(list);
     }
@@ -122,7 +122,7 @@ public class Plan1Controller extends JeecgController<Plan1, IPlan1Service> {
     public Result<?> idsqueryRuList(@RequestParam(name = "ids") String ids) {
         List<Plan1> pageList = plan1Service.idsqueryRuList(Arrays.asList(ids.split(",")));
         for (Plan1 plan1 : pageList) {
-            if (!pageList.get(0).getProjectNo().equals(plan1.getProjectNo())) return Result.error("工程账号必须一致");
+            if (!pageList.get(0).getProjectNo().equals(plan1.getProjectNo())) return Result.error("目的地必须一致");
         }
         return Result.ok(pageList.stream().peek(plan1 -> plan1.setBackup1(null)).collect(Collectors.toList()));
     }
@@ -136,7 +136,7 @@ public class Plan1Controller extends JeecgController<Plan1, IPlan1Service> {
     public Result<?> idsqueryChuList(@RequestParam(name = "ids") String ids) {
         List<SendOrdersVo> pageList = plan1Service.idsqueryChuList(Arrays.asList(ids.split(",")));
         for (SendOrdersVo sendOrdersVo : pageList) {
-            if (!pageList.get(0).getProjectNo().equals(sendOrdersVo.getProjectNo())) return Result.error("工程账号必须一致");
+            if (!pageList.get(0).getProjectNo().equals(sendOrdersVo.getProjectNo())) return Result.error("目的地必须一致");
         }
         return Result.ok(pageList);
     }

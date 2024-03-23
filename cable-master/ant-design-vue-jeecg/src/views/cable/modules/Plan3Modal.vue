@@ -9,78 +9,89 @@
     <a-spin :spinning="confirmLoading">
       <a-form :form="form" style="margin-left: 25px;margin-top: 20px">
 
-        <a-form-item label="新品类型" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-select v-decorator="['planType', validatorRules.planType]" class="inupt_b_a" style="width: 220px" placeholder="请选择所属类型">
-            <a-select-option value="新品">新品</a-select-option>
-            <a-select-option value="抢修">抢修</a-select-option>
-            <a-select-option value="临措">临措</a-select-option>
-          </a-select>
+<!--        <a-form-item label="新品类型" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">-->
+<!--          <a-select v-decorator="['planType', validatorRules.planType]" class="inupt_b_a" style="width: 220px" placeholder="请选择所属类型">-->
+<!--            <a-select-option value="新品">新品</a-select-option>-->
+<!--            <a-select-option value="抢修">抢修</a-select-option>-->
+<!--            <a-select-option value="临措">临措</a-select-option>-->
+<!--          </a-select>-->
+<!--        </a-form-item>-->
+        <div style="margin-bottom: -15px">
+        <a-form-item label="留言用户" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
+          <a-input v-decorator="['projectNo', validatorRules.projectNo]" class="inupt_b_a" style="width: 220px" placeholder="请输入留言用户"></a-input>
         </a-form-item>
-        <a-form-item label="工程账号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-input v-decorator="['projectNo', validatorRules.projectNo]" class="inupt_b_a" style="width: 220px" placeholder="请输入工程账号"></a-input>
+        <a-form-item label="留言内容" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
+          <a-input v-decorator="['engName', validatorRules.engName]" placeholder="请输入留言内容" style="width: 220px"></a-input>
         </a-form-item>
-        <a-form-item label="工程名称" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-input v-decorator="['engName', validatorRules.engName]" placeholder="请输入工程名称" style="width: 220px"></a-input>
+        <a-form-item label="留言日期" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
+          <j-date placeholder="请选择留言日期" v-decorator="['constructionTime']" class="inupt_b_a" :trigger-change="true"/>
         </a-form-item>
-        <a-form-item label="物料代码" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c" style="margin-left: -26px">
-          <j-search-select-tag placeholder="输入原物料编码" v-decorator="[ 'materialCode',validatorRules.materialCode]" style="width: 220px" class="inupt_b_a" dict="material,serial,serial" :async="true" >
-          </j-search-select-tag>
+        </div>
+<!--        <a-form-item label="物料代码" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c" style="margin-left: -26px">-->
+<!--          <j-search-select-tag placeholder="输入原物料编码" v-decorator="[ 'materialCode',validatorRules.materialCode]" style="width: 220px" class="inupt_b_a" dict="material,serial,serial" :async="true" >-->
+<!--          </j-search-select-tag>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="物料描述" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">-->
+<!--          <a-input v-decorator="['materialDescribe', validatorRules.materialDescribe]" class="inupt_b_a" style="width: 220px" placeholder="请输入物料描述"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="计量单位" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">-->
+<!--          <a-select v-decorator="['measuringUnit', validatorRules.measuringUnit]" class="inupt_b_a" style="width: 220px" @change="types" placeholder="请选择计量单位">-->
+<!--            <template v-for="(materialUnit,index) in materialUnits">-->
+<!--              <a-select-option v-bind:value="materialUnit.itemValue">{{materialUnit.itemText}}</a-select-option>-->
+<!--            </template>-->
+<!--          </a-select>-->
+<!--        </a-form-item>-->
+        <div style="margin-bottom: -15px">
+          <a-form-item label="回复用户1" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
+            <a-input v-decorator="['proTheorderNo']" placeholder="请输入回复用户1" class="inupt_b_a"></a-input>
+          </a-form-item>
+        <a-form-item label="回复内容1" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
+          <a-input v-decorator="['proApplyNo']" placeholder="请输入回复内容1" class="inupt_b_a"></a-input>
         </a-form-item>
-        <a-form-item label="物料描述" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-input v-decorator="['materialDescribe', validatorRules.materialDescribe]" class="inupt_b_a" style="width: 220px" placeholder="请输入物料描述"></a-input>
+        <a-form-item label="回复日期1" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
+          <j-date placeholder="请选择回复日期1" v-decorator="['startTime']" class="inupt_b_a" :trigger-change="true"/>
         </a-form-item>
-        <a-form-item label="计量单位" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-select v-decorator="['measuringUnit', validatorRules.measuringUnit]" class="inupt_b_a" style="width: 220px" @change="types" placeholder="请选择计量单位">
-            <template v-for="(materialUnit,index) in materialUnits">
-              <a-select-option v-bind:value="materialUnit.itemValue">{{materialUnit.itemText}}</a-select-option>
-            </template>
-          </a-select>
-        </a-form-item>
-        <a-form-item label="采购申请号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-input v-decorator="['proApplyNo']" placeholder="请输入采购申请号" class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="采购订单号" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-input v-decorator="['proTheorderNo']" placeholder="请输入采购订单号" class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="供应商" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['supplier']" placeholder="请输入供应商"></a-input>
-        </a-form-item>
-        <a-form-item label="需求数量" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input-number v-decorator="['num']" placeholder="请输入需求数量" style="width: 100%"/>
-        </a-form-item>
-        <a-form-item label="项目经理" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['projectManager']" placeholder="请输入项目经理"></a-input>
-        </a-form-item>
-        <a-form-item label="联系方式" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['mPhone']" placeholder="请输入联系方式"></a-input>
-        </a-form-item>
-        <a-form-item label="施工单位名称" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <a-input v-decorator="['companyName']" placeholder="请输入施工单位名称"class="inupt_b_a"></a-input>
-        </a-form-item>
-        <a-form-item label="联系方式" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-          <a-input v-decorator="['cPhone']" placeholder="请输入联系方式"></a-input>
-        </a-form-item>
-        <a-form-item label="送货地点" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 300px">
-          <a-input v-decorator="['address']" placeholder="请输入送货地点" style="width: 550px"></a-input>
-        </a-form-item>
-        <a-form-item label="反馈意见" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">
-          <a-input v-decorator="['feedback']" placeholder="反馈意见" style="width: 550px"></a-input>
-        </a-form-item>
-        <a-form-item label="具体施工日期" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <j-date placeholder="请选择具体施工日期" v-decorator="['constructionTime']" class="inupt_b_a" :trigger-change="true"/>
-        </a-form-item>
-        <a-form-item label="开始送货日期" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <j-date placeholder="请选择开始送货日期" v-decorator="['startTime']" class="inupt_b_a" :trigger-change="true"/>
-        </a-form-item>
-        <a-form-item label="最终到货日期" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
-          <j-date placeholder="请选择最终到货日期" v-decorator="['stopTime']" class="inupt_b_a" :trigger-change="true"/>
-        </a-form-item>
+        </div>
+        <div style="margin-bottom: -15px">
+          <a-form-item label="回复用户2" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
+            <a-input v-decorator="['supplier']" placeholder="请输入回复用户2"class="inupt_b_a"></a-input>
+          </a-form-item>
+          <a-form-item label="回复内容2" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
+            <a-input v-decorator="['companyName']" placeholder="请输入回复内容2"class="inupt_b_a"></a-input>
+          </a-form-item>
+          <a-form-item label="回复日期2" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_c">
+            <j-date placeholder="请选择回复日期2" v-decorator="['stopTime']" class="inupt_b_a" :trigger-change="true"/>
+          </a-form-item>
+        </div>
+<!--        -->
+        <!--         <a-form-item label="回复内容2" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+        <!--           <a-input v-decorator="['projectManager']" placeholder="请输入回复内容2"></a-input>-->
+        <!--         </a-form-item>-->
+        <!--        <a-form-item label="回复内容2" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+        <!--          <a-input-number v-decorator="['num']" placeholder="请输入回复内容2" style="width: 100%"/>-->
+        <!--        </a-form-item>-->
+<!--        <a-form-item label="联系方式" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['mPhone']" placeholder="请输入联系方式"></a-input>-->
+<!--        </a-form-item>-->
+
+<!--        <a-form-item label="联系方式" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
+<!--          <a-input v-decorator="['cPhone']" placeholder="请输入联系方式"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="送货地点" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 300px">-->
+<!--          <a-input v-decorator="['address']" placeholder="请输入送货地点" style="width: 550px"></a-input>-->
+<!--        </a-form-item>-->
+<!--        <a-form-item label="反馈意见" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">-->
+<!--          <a-input v-decorator="['feedback']" placeholder="反馈意见" style="width: 550px"></a-input>-->
+<!--        </a-form-item>-->
+
+
+
         <a-form-item label="备注" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 330px">
           <a-input v-decorator="['note']" placeholder="请输入备注" style="width: 550px"></a-input>
         </a-form-item>
 
-        <a-form-item label="完成状态" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-          <a-select v-decorator="['completeState', validatorRules.completeState]" class="inupt_b_a" style="width: 220px" placeholder="请选择完成状态">
+        <a-form-item label="解决状态" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
+          <a-select v-decorator="['completeState', validatorRules.completeState]" class="inupt_b_a" style="width: 220px" placeholder="请选择解决状态">
             <template v-for="(types,index) in completeStates">
               <a-select-option v-bind:value="types.itemValue">{{types.itemText}}</a-select-option>
             </template>
@@ -103,7 +114,7 @@
 
   export default {
     name: "Plan3Modal",
-    components: { 
+    components: {
       JDate,
       JSearchSelectTag
     },
@@ -125,8 +136,8 @@
         confirmLoading: false,
         validatorRules: {
           planType: { rules: [{ required: true, message: '请选择计划类型' }] },
-          projectNo: { rules: [{ required: true, message: '请输入工程账号' }] },
-          engName: { rules: [{ required: true, message: '请输入与工程名称' }] },
+          projectNo: { rules: [{ required: true, message: '请输入留言用户' }] },
+          engName: { rules: [{ required: true, message: '请输入留言内容' }] },
           materialCode: { rules: [{ required: true, message: '请输入物料代码' }] },
           materialDescribe: { rules: [{ required: true, message: '请输入物料描述' }] },
           measuringUnit: { rules: [{ required: true, message: '请输入计量单位' }] },
@@ -210,7 +221,7 @@
               that.close();
             })
           }
-         
+
         })
       },
       handleCancel () {
@@ -220,7 +231,7 @@
         this.form.setFieldsValue(pick(row,'planType','projectNo','engName','proApplyNo','proTheorderNo','lineitemNo','materialCode','materialDescribe','measuringUnit','supplier','num','projectManager','mPhone','companyName','cPhone','address','feedback','constructionTime','startTime','stopTime','note','instructions','alreadyDeliverStorage','alreadyReceivingStorage','sendOrdersState','completeState','createTime','updateTime','createBy','updateBy','backup1','backup2','backup3','backup4','backup5'))
       },
 
-      
+
     }
   }
 </script>

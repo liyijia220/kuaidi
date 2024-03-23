@@ -242,7 +242,7 @@ public class Plan3Controller extends JeecgController<Plan3, IPlan3Service> {
                     boolean flag = (StrUtil.isNotBlank(plan3Im.getEngName()) || StrUtil.isNotBlank(plan3Im.getProjectNo())
                             || StrUtil.isNotBlank(plan3Im.getMaterialCode()) || StrUtil.isNotBlank(plan3Im.getMaterialDescribe())
                             || StrUtil.isNotBlank(plan3Im.getProTheorderNo()));
-                    if (!flag) return Result.error("请补全物料信息！");
+                    if (!flag) return Result.error("请补全信息！");
 
                     Plan3 plan3 = new Plan3();
                     for (SysDictItem dictItem : dictItems) {

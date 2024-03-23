@@ -5,38 +5,38 @@
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
 
+<!--          <a-col :md="4" :sm="7">-->
+<!--            <a-form-item label="类型">-->
+<!--              <a-select v-model="queryParam.planType" placeholder="请选择所属类型">-->
+<!--                <a-select-option v-for="(item,index) in plan3TypeList" :value="item.itemText">{{item.itemText}}-->
+<!--                </a-select-option>-->
+<!--              </a-select>-->
+<!--            </a-form-item>-->
+<!--          </a-col>-->
+
           <a-col :md="4" :sm="7">
-            <a-form-item label="类型">
-              <a-select v-model="queryParam.planType" placeholder="请选择所属类型">
-                <a-select-option v-for="(item,index) in plan3TypeList" :value="item.itemText">{{item.itemText}}
-                </a-select-option>
-              </a-select>
+            <a-form-item label="留言用户">
+              <a-input placeholder="请输入留言用户" v-model="queryParam.projectNo"></a-input>
             </a-form-item>
           </a-col>
 
-          <a-col :md="4" :sm="7">
-            <a-form-item label="项目编号">
-              <a-input placeholder="请输入项目编号" v-model="queryParam.projectNo"></a-input>
-            </a-form-item>
-          </a-col>
-
-          <a-col :md="4" :sm="7">
-            <a-form-item label="项目名称">
-              <a-input placeholder="请输入项目名称" v-model="queryParam.engName"></a-input>
-            </a-form-item>
-          </a-col>
+<!--          <a-col :md="4" :sm="7">-->
+<!--            <a-form-item label="项目名称">-->
+<!--              <a-input placeholder="请输入项目名称" v-model="queryParam.engName"></a-input>-->
+<!--            </a-form-item>-->
+<!--          </a-col>-->
 
           <template v-if="true">
             <!--          <template v-if="toggleSearchStatus">-->
             <a-col :md="4" :sm="7">
-              <a-form-item label="采购订单号">
-                <a-input placeholder="请输入采购订单号" v-model="queryParam.proTheorderNo"></a-input>
+              <a-form-item label="回复用户1">
+                <a-input placeholder="请输入回复用户1" v-model="queryParam.proTheorderNo"></a-input>
               </a-form-item>
             </a-col>
 
             <a-col :md="4" :sm="7">
-              <a-form-item label="完成状态">
-                <a-select v-model="queryParam.completeState" placeholder="请选择完成状态">
+              <a-form-item label="解决状态">
+                <a-select v-model="queryParam.completeState" placeholder="请选择解决状态">
                   <template v-for="(types,index) in completeStates">
                     <a-select-option v-bind:value="types.itemValue">{{types.itemText}}</a-select-option>
                   </template>
@@ -62,12 +62,12 @@
                   :label-col="{ span: 5 }"
                   :wrapper-col="{ span: 12 }" style="padding-top: 20px">
 
-                  <a-form-item label="导入类型" style="width: 400px;margin-left: 20px">
-                    <a-select v-model="planType" placeholder="选择导入类型">
-                       <a-select-option v-for="(item,index) in plan3TypeList" :value="item.itemText">{{item.itemText}}
-                      </a-select-option>
-                    </a-select>
-                  </a-form-item>
+<!--                  <a-form-item label="导入类型" style="width: 400px;margin-left: 20px">-->
+<!--                    <a-select v-model="planType" placeholder="选择导入类型">-->
+<!--                       <a-select-option v-for="(item,index) in plan3TypeList" :value="item.itemText">{{item.itemText}}-->
+<!--                      </a-select-option>-->
+<!--                    </a-select>-->
+<!--                  </a-form-item>-->
 
                   <a-form-item label="选择文件" style="width: 400px;margin-left: 20px">
                     <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader"
@@ -86,18 +86,18 @@
                 <!-- 自定义页脚-END -->
 
               </a-modal>
-              <a-button style="margin-left: 8px" type="primary" icon="download"
-                        @click="showExportPlan3Modal">导出</a-button>
-              <a-button @click="TheSameDay" icon="search" type="primary"
-                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">今日派单</a-button>
-              <a-button @click="mergePlan" icon="search" type="primary"
-                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并派单</a-button>
-              <a-button @click="completePlan" icon="check-circle" type="primary"
-                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并完单</a-button>
-              <a-button @click="assignsJL" icon="check-circle" type="primary"
-                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">派单记录</a-button>
-                <a-button @click="assignsWD" icon="check-circle" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">完单记录</a-button>
+<!--              <a-button style="margin-left: 8px" type="primary" icon="download"-->
+<!--                        @click="showExportPlan3Modal">导出</a-button>-->
+<!--              <a-button @click="TheSameDay" icon="search" type="primary"-->
+<!--                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">今日派单</a-button>-->
+<!--              <a-button @click="mergePlan" icon="search" type="primary"-->
+<!--                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并派单</a-button>-->
+<!--              <a-button @click="completePlan" icon="check-circle" type="primary"-->
+<!--                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并完单</a-button>-->
+<!--              <a-button @click="assignsJL" icon="check-circle" type="primary"-->
+<!--                        style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">派单记录</a-button>-->
+<!--                <a-button @click="assignsWD" icon="check-circle" type="primary"-->
+<!--                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">完单记录</a-button>-->
               <a-modal
                 v-model="plan3ExportModal_visible"
                 :width=700 style="margin-top: 150px">
@@ -283,39 +283,39 @@
         queryParam: {},
         // 表头
         columns: [
+          // {
+          //   title: '计划类型',
+          //   align: 'center',
+          //   dataIndex: 'planType',
+          //   scopedSlots: {customRender: 'factoryText'}
+          // },
           {
-            title: '计划类型',
-            align: 'center',
-            dataIndex: 'planType',
-            scopedSlots: {customRender: 'factoryText'}
-          },
-          {
-            title: '项目编号',
+            title: '留言用户',
             align: 'center',
             dataIndex: 'projectNo',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '工程名称',
+            title: '留言内容',
             align: 'center',
             dataIndex: 'engName',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '采购订单号',
+            title: '回复用户1',
             align: 'center',
             dataIndex: 'proTheorderNo',
           },
+          // {
+          //   title: '物料描述',
+          //   align: 'center',
+          //   dataIndex: 'materialDescribe',
+          //   scopedSlots: {customRender: 'factoryText'}
+          // },
           {
-            title: '物料描述',
+            title: '回复内容1',
             align: 'center',
-            dataIndex: 'materialDescribe',
-            scopedSlots: {customRender: 'factoryText'}
-          },
-          {
-            title: '需求数量',
-            align: 'center',
-            dataIndex: 'num',
+            dataIndex: 'proApplyNo',
           },
           /*{
             title: '单位',
@@ -323,53 +323,53 @@
             dataIndex: 'measuringUnit_dictText',
             scopedSlots: { customRender: 'factoryText' }
           },*/
+          // {
+          //   title: '入库状态',
+          //   align: 'center',
+          //   dataIndex: '',
+          //   customRender: (text, record) => {
+          //     if (record.alreadyDeliverStorage === null || record.alreadyDeliverStorage === undefined || record.alreadyDeliverStorage === 0) return '未入库'
+          //     else return '已入库'
+          //   }
+          // },
+          // {
+          //   title: '入库数量',
+          //   align: 'center',
+          //   dataIndex: 'alreadyDeliverStorage',
+          //   customRender: (value, row, index) => {
+          //     if (value === null || value === undefined) return 0
+          //     else return value
+          //   }
+          // },
+          // {
+          //   title: '出库状态',
+          //   align: 'center',
+          //   dataIndex: '',
+          //   customRender: (text, record) => {
+          //     if (record.alreadyReceivingStorage === null || record.alreadyReceivingStorage === undefined || record.alreadyReceivingStorage === 0) return '未出库'
+          //     else return '已出库'
+          //   }
+          // },
+          // {
+          //   title: '出库数量',
+          //   align: 'center',
+          //   dataIndex: 'alreadyReceivingStorage',
+          //   customRender: (value, row, index) => {
+          //     if (value === null || value === undefined) return 0
+          //     else return value
+          //   }
+          // },
+          // {
+          //   title: '派单状态',
+          //   align: 'center',
+          //   dataIndex: 'sendOrdersState',
+          //   customRender: (value, row, index) => {
+          //     if (value === 0) return '未派单'
+          //     else return '已派单'
+          //   }
+          // },
           {
-            title: '入库状态',
-            align: 'center',
-            dataIndex: '',
-            customRender: (text, record) => {
-              if (record.alreadyDeliverStorage === null || record.alreadyDeliverStorage === undefined || record.alreadyDeliverStorage === 0) return '未入库'
-              else return '已入库'
-            }
-          },
-          {
-            title: '入库数量',
-            align: 'center',
-            dataIndex: 'alreadyDeliverStorage',
-            customRender: (value, row, index) => {
-              if (value === null || value === undefined) return 0
-              else return value
-            }
-          },
-          {
-            title: '出库状态',
-            align: 'center',
-            dataIndex: '',
-            customRender: (text, record) => {
-              if (record.alreadyReceivingStorage === null || record.alreadyReceivingStorage === undefined || record.alreadyReceivingStorage === 0) return '未出库'
-              else return '已出库'
-            }
-          },
-          {
-            title: '出库数量',
-            align: 'center',
-            dataIndex: 'alreadyReceivingStorage',
-            customRender: (value, row, index) => {
-              if (value === null || value === undefined) return 0
-              else return value
-            }
-          },
-          {
-            title: '派单状态',
-            align: 'center',
-            dataIndex: 'sendOrdersState',
-            customRender: (value, row, index) => {
-              if (value === 0) return '未派单'
-              else return '已派单'
-            }
-          },
-          {
-            title: '计划状态',
+            title: '解决状态',
             align: 'center',
             dataIndex: 'completeState_dictText'
           },

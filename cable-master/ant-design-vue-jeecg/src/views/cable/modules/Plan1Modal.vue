@@ -41,7 +41,7 @@
             <a-input v-decorator="['projectName', validatorRules.projectName]" placeholder="请输入当前仓库"class="inupt_b_a" style="width: 550px"></a-input>
           </a-form-item>
           <a-form-item label="当前库位" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_b">
-            <a-input v-decorator="['assetNo', validatorRules.assetNo]" placeholder="请输入资产编码" class="inupt_b_a"></a-input>
+            <a-input v-decorator="['assetNo', validatorRules.assetNo]" placeholder="请输入当前库位" class="inupt_b_a"></a-input>
           </a-form-item>
         </div>
 
@@ -49,8 +49,8 @@
           <a-form-item label="重量" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_d"style="margin-left: -35px">
             <a-input v-decorator="['numReceipts', validatorRules.numReceipts]" placeholder="请输入重量" class="inupt_b_a" style="width: 220px"/>
           </a-form-item>
-          <a-form-item label="终点仓库" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">
-            <a-input v-decorator="['theFactory']" placeholder="请输入终点仓库" ></a-input>
+          <a-form-item label="终点仓库" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a" style="margin-right: 273px">
+            <a-input v-decorator="['theFactory']" placeholder="请输入终点仓库"class="inupt_b_a" style="width: 550px" ></a-input>
           </a-form-item>
 <!--          <a-form-item label="工厂描述" :labelCol="labelCol" :wrapperCol="wrapperCol" class="inupt_a">-->
 <!--            <a-input v-decorator="['factoryText']" placeholder="请输入工厂描述" ></a-input>-->
