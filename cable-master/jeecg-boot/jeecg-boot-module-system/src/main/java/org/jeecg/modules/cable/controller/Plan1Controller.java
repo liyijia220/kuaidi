@@ -174,12 +174,24 @@ public class Plan1Controller extends JeecgController<Plan1, IPlan1Service> {
     @ApiOperation(value = "计划表1-通过id删除", notes = "计划表1-通过id删除")
     @DeleteMapping(value = "/delete")
     public Result<?> delete(@RequestParam(name = "id") String id) {
-        if (plan1Service.getById(id).getSendOrdersState() == 0) {
+        try {
             plan1Service.removeById(id);
             return Result.ok("删除成功!");
+        } catch (Exception e) {
+            // 这里可以捕获任何可能在删除过程中抛出的异常，并返回相应的错误信息
+            return Result.error("删除失败: " + e.getMessage());
         }
-        return Result.error("该计划已派过单，暂时不能删除");
     }
+//    @AutoLog(value = "计划表1-通过id删除")
+//    @ApiOperation(value = "计划表1-通过id删除", notes = "计划表1-通过id删除")
+//    @DeleteMapping(value = "/delete")
+//    public Result<?> delete(@RequestParam(name = "id") String id) {
+//        if (plan1Service.getById(id).getSendOrdersState() == 0) {
+//            plan1Service.removeById(id);
+//            return Result.ok("删除成功!");
+//        }
+//        return Result.error("该计划已派过单，暂时不能删除");
+//    }
 
     /**
      * 通过id查询

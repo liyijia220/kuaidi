@@ -9,9 +9,9 @@
               <a-select
                 v-model="queryParam.planType"
                 placeholder="请选择计划类型">
-                <a-select-option value="配变电">配变电</a-select-option>
-                <a-select-option value="线路">线路</a-select-option>
-                <a-select-option value="电缆">电缆</a-select-option>
+                <a-select-option value="陆运">陆运</a-select-option>
+                <a-select-option value="铁运">铁运</a-select-option>
+                <a-select-option value="空运">空运</a-select-option>
                 <a-select-option value="其他">其他</a-select-option>
               </a-select>
             </a-form-item>
@@ -24,8 +24,8 @@
           </a-col>-->
 
           <a-col :md="4" :sm="7">
-            <a-form-item label="资产编号">
-              <a-input placeholder="请输入资产编号" v-model="queryParam.assetNo"></a-input>
+            <a-form-item label="当前库位">
+              <a-input placeholder="请输入当前库位" v-model="queryParam.assetNo"></a-input>
             </a-form-item>
           </a-col>
 
@@ -33,14 +33,14 @@
             <!--          <template v-if="toggleSearchStatus">-->
 
             <a-col :md="4" :sm="7">
-              <a-form-item label="项目编号">
-                <a-input placeholder="请输入项目编号" v-model="queryParam.projectNo"></a-input>
+              <a-form-item label="目的地">
+                <a-input placeholder="请输入目的地" v-model="queryParam.projectNo"></a-input>
               </a-form-item>
             </a-col>
 
             <a-col :md="4" :sm="7">
-              <a-form-item label="项目名称">
-                <a-input placeholder="请输入项目名称" v-model="queryParam.projectName"></a-input>
+              <a-form-item label="当前仓库">
+                <a-input placeholder="请输入当前仓库" v-model="queryParam.projectName"></a-input>
               </a-form-item>
             </a-col>
 
@@ -76,10 +76,11 @@
 
                     <a-form-item label="导入类型" style="margin-left: 10px;width: 500px;margin-left: 30px;margin-top: 20px">
                       <a-select v-model="planType" placeholder="选择导入类型" style="width: 200px;margin-left: 5px">
-                        <a-select-option value="配变电">配变电</a-select-option>
-                        <a-select-option value="线路">线路</a-select-option>
-                        <a-select-option value="电缆">电缆</a-select-option>
+                        <a-select-option value="陆运">陆运</a-select-option>
+                        <a-select-option value="铁运">铁运</a-select-option>
+                        <a-select-option value="空运">空运</a-select-option>
                         <a-select-option value="其他">其他</a-select-option>
+
                       </a-select>
                     </a-form-item>
 
@@ -100,16 +101,16 @@
                 </a-modal>
                 <a-button style="margin-left: 8px" type="primary" icon="download"
                           @click="showExportPlan1Modal">导出</a-button>
-                <a-button @click="TheSameDay" icon="search" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">今日派单</a-button>
+<!--                <a-button @click="TheSameDay" icon="search" type="primary"-->
+<!--                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">今日派单</a-button>-->
                 <a-button @click="mergePlan" icon="login" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并派单</a-button>
-                <a-button @click="completePlan" icon="check-circle" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并完单</a-button>
+                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">出车管理</a-button>
+<!--                <a-button @click="completePlan" icon="check-circle" type="primary"-->
+<!--                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">合并完单</a-button>-->
                 <a-button @click="assignsJL" icon="check-circle" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">派单记录</a-button>
-                <a-button @click="assignsWD" icon="check-circle" type="primary"
-                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">完单记录</a-button>
+                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">出车记录</a-button>
+<!--                <a-button @click="assignsWD" icon="check-circle" type="primary"-->
+<!--                          style="margin-left: 8px;background-color: darkturquoise;border: darkturquoise">完单记录</a-button>-->
                 <a-modal
                   v-model="plan1ExportModal_visible"
                   :width=700 style="margin-top: 150px">
@@ -125,14 +126,14 @@
                         <j-date v-model="queryParam.endTime" placeholder="结束日期" showTime="true"
                                 dateFormat="YYYY-MM-DD HH:mm:ss"></j-date>
                       </a-form-item>
-                    <a-form-item label="导出反馈说明" style="margin-top: 20px">
-                      <a-input v-model="queryParam.explain" placeholder="请输入反馈说明" style="width: 370px"></a-input>
+                    <a-form-item label="导出备注" style="margin-top: 20px">
+                      <a-input v-model="queryParam.explain" placeholder="请输入备注" style="width: 370px"></a-input>
                     </a-form-item>
                   </a-form>
                   <!-- 自定义内容-END -->
                   <!-- 自定义页脚-begin -->
                   <template slot="footer">
-                    <a-button type="primary" @click="handleExportXls('计划列表')">导出反馈excel</a-button>
+                    <a-button type="primary" @click="handleExportXls('计划列表')">导出excel</a-button>
                     <a-button @click="handleCancelExportPlan1Modal">关闭</a-button>
                   </template>
                   <!-- 自定义页脚-END -->
@@ -228,11 +229,16 @@
 
     <plan1-modal ref="modalForm" @ok="modasFormOk"></plan1-modal><!-- 计划编辑 -->
     <planAccomplish-modal ref="planAccomplishModal" @ok="modasFormOk"></planAccomplish-modal>   <!-- 完单 modal -->
+
     <planSendOrders-modal ref="planSendOrdersModal" @ok="modasFormOk"></planSendOrders-modal> <!-- 派单 modal -->
+
     <plan-complete-state-modal ref="planCompleteStateModal" @ok="modasFormOk"></plan-complete-state-modal><!-- 计划完成状态 -->
+
     <plan-send-orders-the-same-day-modal ref="planSendOrdersTheSameDayModal"
                                          @ok="modasFormOk"></plan-send-orders-the-same-day-modal><!-- 今日派单 -->
+
     <plan-send-orders-j-l-modal ref="planSendOrdersJLModal" @ok="modasFormOk"></plan-send-orders-j-l-modal><!-- 派单记录 modal -->
+
     <plan-send-orders-wd-modal ref="planSendOrdersWdModal" @ok="modasFormOk"></plan-send-orders-wd-modal><!-- 完单记录 modal -->
     <complete-plan1-model ref="CompletePlan1Model" @ok="modasFormOk"></complete-plan1-model><!-- 合并完单 -->
     <merge-plan-model-plan1 ref="MergePlanModelPlan1" @ok="modasFormOk"></merge-plan-model-plan1><!-- 合并派单 -->
@@ -295,7 +301,7 @@
         confirmLoading: false,
         endOpen: false,
         // 导入excel类型
-        planType: '配变电',
+        planType: '陆运',
         //查询条件
         queryParam: {},
         // 表头
@@ -313,25 +319,25 @@
           //   scopedSlots: {customRender: 'factoryText'}
           // },
           {
-            title: '资产编号',
+            title: '当前库位',
             align: 'center',
             dataIndex: 'assetNo',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '项目编号',
+            title: '目的地',
             align: 'center',
             dataIndex: 'projectNo',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '项目名称',
+            title: '当前仓库',
             align: 'center',
             dataIndex: 'projectName',
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '废旧物料描述',
+            title: '快递名称',
             align: 'center',
             dataIndex: 'wasteMaterialText',
             scopedSlots: {customRender: 'factoryText'}
@@ -343,46 +349,46 @@
             scopedSlots: {customRender: 'factoryText'}
           },
           {
-            title: '计划数量',
+            title: '重量',
             align: 'center',
             dataIndex: 'numReceipts',
           },
-          {
-            title: '入库状态',
-            align: 'center',
-            dataIndex: '',
-            customRender: (text, record) => {
-              if (record.alreadyDeliverStorage === null || record.alreadyDeliverStorage === undefined || record.alreadyDeliverStorage === 0) return '未入库'
-              else return '已入库'
-            }
-          },
-          {
-            title: '入库数量',
-            align: 'center',
-            dataIndex: 'alreadyDeliverStorage',
-            customRender: (value, row, index) => {
-              if (value === null || value === undefined) return 0
-              else return value
-            }
-          },
-          {
-            title: '出库状态',
-            align: 'center',
-            dataIndex: '',
-            customRender: (text, record) => {
-              if (record.alreadyReceivingStorage === null || record.alreadyReceivingStorage === undefined || record.alreadyReceivingStorage === 0) return '未出库'
-              else return '已出库'
-            }
-          },
-          {
-            title: '出库数量',
-            align: 'center',
-            dataIndex: 'alreadyReceivingStorage',
-            customRender: (value, row, index) => {
-              if (value === null || value === undefined) return 0
-              else return value
-            }
-          },
+          // {
+          //   title: '入库状态',
+          //   align: 'center',
+          //   dataIndex: '',
+          //   customRender: (text, record) => {
+          //     if (record.alreadyDeliverStorage === null || record.alreadyDeliverStorage === undefined || record.alreadyDeliverStorage === 0) return '未入库'
+          //     else return '已入库'
+          //   }
+          // },
+          // {
+          //   title: '入库数量',
+          //   align: 'center',
+          //   dataIndex: 'alreadyDeliverStorage',
+          //   customRender: (value, row, index) => {
+          //     if (value === null || value === undefined) return 0
+          //     else return value
+          //   }
+          // },
+          // {
+          //   title: '出库状态',
+          //   align: 'center',
+          //   dataIndex: '',
+          //   customRender: (text, record) => {
+          //     if (record.alreadyReceivingStorage === null || record.alreadyReceivingStorage === undefined || record.alreadyReceivingStorage === 0) return '未出库'
+          //     else return '已出库'
+          //   }
+          // },
+          // {
+          //   title: '出库数量',
+          //   align: 'center',
+          //   dataIndex: 'alreadyReceivingStorage',
+          //   customRender: (value, row, index) => {
+          //     if (value === null || value === undefined) return 0
+          //     else return value
+          //   }
+          // },
           {
             title: '派单状态',
             align: 'center',

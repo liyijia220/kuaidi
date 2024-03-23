@@ -122,59 +122,59 @@
                         dataIndex: 'taskTime',
                         width: 90
                     },
+                    // {
+                    //     title: '自家仓库',
+                    //     align: 'center',
+                    //     dataIndex: 'warehouseName',
+                    //   scopedSlots: {customRender: 'factoryText'}
+                    //     /*customRender: (value, row, index) => {
+                    //         var s = ''
+                    //         for (let item of this.warehouseLists) {
+                    //             if (value == item.id) {
+                    //                 s = item.name
+                    //             }
+                    //         }
+                    //         return s
+                    //     }*/
+                    // },
+                    // {
+                    //     title: '自家库位',
+                    //     align: 'center',
+                    //     dataIndex: 'storageLocationName',
+                    //     scopedSlots: {customRender: 'factoryText'}
+                    // },
+                    // {
+                    //     title: '终点仓库',
+                    //     align: 'center',
+                    //     dataIndex: 'endWarehouseName',
+                    //   scopedSlots: {customRender: 'factoryText'}
+                    //     /*customRender: (value, row, index) => {
+                    //         var s = ''
+                    //         for (let item of this.warehouseLists) {
+                    //             if (value == item.id) {
+                    //                 s = item.name
+                    //             }
+                    //         }
+                    //         return s
+                    //     }*/
+                    // },
                     {
-                        title: '自家仓库',
-                        align: 'center',
-                        dataIndex: 'warehouseName',
-                      scopedSlots: {customRender: 'factoryText'}
-                        /*customRender: (value, row, index) => {
-                            var s = ''
-                            for (let item of this.warehouseLists) {
-                                if (value == item.id) {
-                                    s = item.name
-                                }
-                            }
-                            return s
-                        }*/
-                    },
-                    {
-                        title: '自家库位',
-                        align: 'center',
-                        dataIndex: 'storageLocationName',
-                        scopedSlots: {customRender: 'factoryText'}
-                    },
-                    {
-                        title: '终点仓库',
-                        align: 'center',
-                        dataIndex: 'endWarehouseName',
-                      scopedSlots: {customRender: 'factoryText'}
-                        /*customRender: (value, row, index) => {
-                            var s = ''
-                            for (let item of this.warehouseLists) {
-                                if (value == item.id) {
-                                    s = item.name
-                                }
-                            }
-                            return s
-                        }*/
-                    },
-                    {
-                        title: '项目名称',
+                        title: '当前仓库',
                         align: 'center',
                         dataIndex: 'projectName',
                         scopedSlots: {customRender: 'factoryText'}
                     },
                     {
-                        title: '物料描述',
+                        title: '快递名称',
                         align: 'center',
                         dataIndex: 'rawMaterialText',
                         scopedSlots: {customRender: 'factoryText'}
                     },
-                    {
-                        title: '派单数量',
-                        align: 'center',
-                        dataIndex: 'backup1',
-                    },
+                    // {
+                    //     title: '派单数量',
+                    //     align: 'center',
+                    //     dataIndex: 'backup1',
+                    // },
                     {
                         title: '联系人',
                         align: 'center',
@@ -194,7 +194,7 @@
                         scopedSlots: {customRender: 'factoryText'}
                     },
                     {
-                        title: '参与员工',
+                        title: '接洽员工',
                         align: 'center',
                         dataIndex: 'a1',
                         width: 200,
@@ -254,10 +254,15 @@
                 url: {
                     add: '/cable/sendOrders/add',
                     deleteWangda: '/cable/sendOrders/delete',
+                    wddelete: '/cable/sendOrders/wddelete',
+                    delete: '/cable/sendOrders/delete',
+                    mergePlanEdit: '/cable/sendOrders/mergePlanEdit',
+                    queryById: '/cable/sendOrders/queryById',
                     edit: '/cable/sendOrders/edit'
                 },
                 paln: '',
                 data: {},
+                dictOptions: {},
                 vehicles: {},
                 users: {},
                 serials: '',

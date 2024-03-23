@@ -83,7 +83,7 @@
 
         <a-row :gutter="24">
           <a-col :span="8">
-            <a-form-item label="员工">
+            <a-form-item label="接洽员工">
               <a-select
                 mode="multiple"
                 placeholder="请选择员工"

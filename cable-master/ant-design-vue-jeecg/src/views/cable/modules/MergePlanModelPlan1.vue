@@ -16,8 +16,8 @@
 
         <a-row :gutter="24">
           <a-col :md="6" :sm="12">
-            <a-form-item label="派单类型">
-              <a-select v-decorator="['operatorSchema',validatorRules.operatorSchema]" placeholder="请选择派单类型" @change="changeOperatorSchema">
+            <a-form-item label="任务类型">
+              <a-select v-decorator="['operatorSchema',validatorRules.operatorSchema]" placeholder="请选择任务类型" @change="changeOperatorSchema">
                 <a-select-option value="0">出库</a-select-option>
                 <a-select-option value="1">入库</a-select-option>
               </a-select>
@@ -31,7 +31,7 @@
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="12">
-            <a-form-item label="员工">
+            <a-form-item label="接洽员工">
               <j-multi-select-tag
                 v-decorator="['realname',validatorRules.realname]"
                 :options="dictOptions"
@@ -47,14 +47,14 @@
         <a-row :gutter="24">
 
           <a-col :md="6" :sm="12">
-            <a-form-item label="联系人">
+            <a-form-item label="车辆联系人">
               <a-input placeholder="请输入联系人"
                        v-decorator="['backup3',validatorRules.backup3]"></a-input>
             </a-form-item>
           </a-col>
 
           <a-col :md="6" :sm="12">
-            <a-form-item label="联系电话">
+            <a-form-item label="车辆联系电话">
               <a-input placeholder="请输入联系电话"
                        v-decorator="['backup4',validatorRules.backup4]"></a-input>
             </a-form-item>
@@ -114,7 +114,7 @@
 
       <!-- 子表单区域 -->
       <a-tabs v-model="activeKey" @change="handleChangeTabs">
-        <a-tab-pane tab="派单信息" key="1" :forceRender="true">
+        <a-tab-pane tab="待出车快递信息" key="1" :forceRender="true">
 
           <j-editable-table
             ref="editableTable1"
@@ -130,7 +130,7 @@
 
         </a-tab-pane>
 
-        <a-tab-pane tab="派单车辆信息" key="2" :forceRender="true">
+        <a-tab-pane tab="车辆信息" key="2" :forceRender="true">
 
           <j-editable-table
             ref="editableTable2"
@@ -216,7 +216,7 @@
           dataSource: [],
           columns:  [
             {
-              title: '工程账号',
+              title: '目的地',
               key: 'projectNo',
               width: '12%',
               type: FormTypes.normal,
@@ -225,7 +225,7 @@
               validateRules: [{ required: false, message: '${title}不能为空' }]
             },
             {
-              title: '工程名称',
+              title: '当前仓库',
               key: 'projectName',
               width: '22%',
               type: FormTypes.normal,
@@ -235,7 +235,7 @@
               scopedSlots: { customRender: 'factoryText' },
             },
             {
-              title: '物料名称',
+              title: '快递名称',
               key: 'wasteMaterialText',
               width: '20%',
               type: FormTypes.normal,
@@ -243,15 +243,15 @@
               placeholder: '请输入${title}',
               validateRules: [{ required: false, message: '${title}不能为空' }]
             },
-            {
-              title: '派单数量',
-              key: 'backup1',
-              width: '8%',
-              type: FormTypes.inputNumber,
-              defaultValue: '1',
-              placeholder: '${title}',
-              validateRules: [{ required: true,pattern: /^([^0]|.{2,})$/, message: '${title}不能为空' }]
-            },
+            // {
+            //   title: '派单数量',
+            //   key: 'backup1',
+            //   width: '8%',
+            //   type: FormTypes.inputNumber,
+            //   defaultValue: '1',
+            //   placeholder: '${title}',
+            //   validateRules: [{ required: true,pattern: /^([^0]|.{2,})$/, message: '${title}不能为空' }]
+            // },
             /*{
               title: '自家仓库',
               key: 'warehouseId',
@@ -314,7 +314,7 @@
           dataSource: [],
           columns:  [
             {
-              title: '工程账号',
+              title: '目的地',
               key: 'projectNo',
               width: '12%',
               type: FormTypes.normal,
@@ -323,7 +323,7 @@
               validateRules: [{ required: false, message: '${title}不能为空' }]
             },
             {
-              title: '工程名称',
+              title: '当前仓库',
               key: 'projectName',
               width: '22%',
               type: FormTypes.normal,
@@ -333,61 +333,61 @@
               scopedSlots: { customRender: 'factoryText' },
             },
             {
-              title: '物料名称',
+              title: '快递名称',
               key: 'wasteMaterialText',
               width: '20%',
               type: FormTypes.normal,
               defaultValue: 'A02',
               placeholder: '请输入${title}',
               validateRules: [{ required: false, message: '${title}不能为空' }]
-            },
-            {
-              title: '自家仓库',
-              key: 'wname',
-              width: '10%',
-              type: FormTypes.normal,
-              // disabled:true,
-              // dictCode:"warehouse,name,id",
-              placeholder: '请选择${title}',
-              validateRules: [{ required: false, message: '请选择${title}' }],
-              // onchange: 'onchange'
-            },
-            {
-              title: '自家库位',
-              key: 'storagename',
-              width: '10%',
-              type: FormTypes.normal,
-              // disabled:true,
-              // dictCode: 'storage_location,storage_location_name,id',
-              validateRules: [{ required: false, message: '请选择${title}' }],
-              placeholder: '请选择${title}'
-            },
-            {
-              title: '可出库数量',
-              key: 'inventoryQuantity',
-              width: '8%',
-              type: FormTypes.normal,
-              placeholder: '请输入${title}',
-              validateRules: [{ required: false, message: '${title}不能为空' }]
-            },
-            {
-              title: '派单数量',
-              key: 'backup1',
-              width: '8%',
-              type: FormTypes.inputNumber,
-              defaultValue: '1',
-              placeholder: '${title}',
-              validateRules: [{ required: true,pattern: /^([^0]|.{2,})$/, message: '${title}不能为空' }]
-            },
-            {
-              title: '终点仓库',
-              key: 'endWarehouseId',
-              width: '10%',
-              type: FormTypes.select,
-              dictCode: 'warehouse,name,id',
-              placeholder: '请选择${title}',
-              validateRules: [{ required: false, message: '请选择${title}' }]
             }
+            // {
+            //   title: '自家仓库',
+            //   key: 'wname',
+            //   width: '10%',
+            //   type: FormTypes.normal,
+            //   // disabled:true,
+            //   // dictCode:"warehouse,name,id",
+            //   placeholder: '请选择${title}',
+            //   validateRules: [{ required: false, message: '请选择${title}' }],
+            //   // onchange: 'onchange'
+            // },
+            // {
+            //   title: '自家库位',
+            //   key: 'storagename',
+            //   width: '10%',
+            //   type: FormTypes.normal,
+            //   // disabled:true,
+            //   // dictCode: 'storage_location,storage_location_name,id',
+            //   validateRules: [{ required: false, message: '请选择${title}' }],
+            //   placeholder: '请选择${title}'
+            // },
+            // {
+            //   title: '可出库数量',
+            //   key: 'inventoryQuantity',
+            //   width: '8%',
+            //   type: FormTypes.normal,
+            //   placeholder: '请输入${title}',
+            //   validateRules: [{ required: false, message: '${title}不能为空' }]
+            // },
+            // {
+            //   title: '派单数量',
+            //   key: 'backup1',
+            //   width: '8%',
+            //   type: FormTypes.inputNumber,
+            //   defaultValue: '1',
+            //   placeholder: '${title}',
+            //   validateRules: [{ required: true,pattern: /^([^0]|.{2,})$/, message: '${title}不能为空' }]
+            // },
+            // {
+            //   title: '终点仓库',
+            //   key: 'endWarehouseId',
+            //   width: '10%',
+            //   type: FormTypes.select,
+            //   dictCode: 'warehouse,name,id',
+            //   placeholder: '请选择${title}',
+            //   validateRules: [{ required: false, message: '请选择${title}' }]
+            // }
           ],
         },
         // 派单车辆信息
