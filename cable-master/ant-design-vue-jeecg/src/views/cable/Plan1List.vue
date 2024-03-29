@@ -228,19 +228,19 @@
     </div>
 
     <plan1-modal ref="modalForm" @ok="modasFormOk"></plan1-modal><!-- 计划编辑 -->
-    <planAccomplish-modal ref="planAccomplishModal" @ok="modasFormOk"></planAccomplish-modal>   <!-- 完单 modal -->
+<!--    <planAccomplish-modal ref="planAccomplishModal" @ok="modasFormOk"></planAccomplish-modal>   &lt;!&ndash; 完单 modal &ndash;&gt;-->
 
     <planSendOrders-modal ref="planSendOrdersModal" @ok="modasFormOk"></planSendOrders-modal> <!-- 派单 modal -->
 
     <plan-complete-state-modal ref="planCompleteStateModal" @ok="modasFormOk"></plan-complete-state-modal><!-- 计划完成状态 -->
 
-    <plan-send-orders-the-same-day-modal ref="planSendOrdersTheSameDayModal"
-                                         @ok="modasFormOk"></plan-send-orders-the-same-day-modal><!-- 今日派单 -->
+<!--    <plan-send-orders-the-same-day-modal ref="planSendOrdersTheSameDayModal"-->
+<!--                                         @ok="modasFormOk"></plan-send-orders-the-same-day-modal>&lt;!&ndash; 今日派单 &ndash;&gt;-->
 
     <plan-send-orders-j-l-modal ref="planSendOrdersJLModal" @ok="modasFormOk"></plan-send-orders-j-l-modal><!-- 派单记录 modal -->
 
-    <plan-send-orders-wd-modal ref="planSendOrdersWdModal" @ok="modasFormOk"></plan-send-orders-wd-modal><!-- 完单记录 modal -->
-    <complete-plan1-model ref="CompletePlan1Model" @ok="modasFormOk"></complete-plan1-model><!-- 合并完单 -->
+<!--    <plan-send-orders-wd-modal ref="planSendOrdersWdModal" @ok="modasFormOk"></plan-send-orders-wd-modal>&lt;!&ndash; 完单记录 modal &ndash;&gt;-->
+<!--    <complete-plan1-model ref="CompletePlan1Model" @ok="modasFormOk"></complete-plan1-model>&lt;!&ndash; 合并完单 &ndash;&gt;-->
     <merge-plan-model-plan1 ref="MergePlanModelPlan1" @ok="modasFormOk"></merge-plan-model-plan1><!-- 合并派单 -->
 
   </a-card>
