@@ -14,5 +14,6 @@ else
     :系统显示“信息验证失败”的错误消息;
   endif
 endif
+
 stop
 @enduml
