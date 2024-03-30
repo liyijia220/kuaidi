@@ -11,7 +11,7 @@
  Target Server Version : 50744
  File Encoding         : 65001
 
- Date: 24/03/2024 15:00:27
+ Date: 30/03/2024 14:02:05
 */
 
 SET NAMES utf8mb4;
@@ -190,7 +190,7 @@ CREATE TABLE `insurance`  (
 -- ----------------------------
 -- Records of insurance
 -- ----------------------------
-INSERT INTO `insurance` VALUES (1, '鲁R12345', '平安保险', '221173040425', '2024-03-01 00:00:00', '2025-03-01 00:00:00', '2024-03-01 00:00:00', '2025-03-01 00:00:00', '221173040425', '2024-01-05 15:56:14', '2024-03-17 22:45:05', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `insurance` VALUES (1, '鲁R12345', '平安保险', '221173040425', '2024-03-01 00:00:00', '2025-03-02 00:00:00', '2024-03-01 00:00:00', '2025-03-02 00:00:00', '221173040425', '2024-01-05 15:56:14', '2024-03-29 13:57:00', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for inventory
@@ -213,7 +213,7 @@ CREATE TABLE `inventory`  (
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '单位',
   `backup4` decimal(10, 2) NULL DEFAULT NULL COMMENT '容积',
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '入库完单重量(电缆)',
-  `recycling_specifications` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `recycling_specifications` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `asset_no` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '资产编号',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库存表' ROW_FORMAT = Compact;
@@ -357,7 +357,7 @@ CREATE TABLE `material`  (
   `ations` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '发件人手机号',
   `supplier` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '收件人',
   `unit` int(11) NULL DEFAULT NULL COMMENT '体积单位()',
-  `material_volume` decimal(10, 2) NULL DEFAULT NULL COMMENT '',
+  `material_volume` decimal(10, 2) NULL DEFAULT NULL,
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `create_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人',
@@ -369,16 +369,17 @@ CREATE TABLE `material`  (
   `backup5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '重量',
   `backup6` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '所在仓库',
   `backup7` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '库位',
-  `backup8` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `backup9` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `backup8` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `backup9` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '快递表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '快递表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of material
 -- ----------------------------
 INSERT INTO `material` VALUES (13, '123457', '羽绒服', '123456789', '222', 3, NULL, '2024-03-22 00:00:00', '2024-03-22 20:21:23', 'admin', 'admin', '333', '1234567891', '山东省菏泽市', '山东省日照市东港区', '3kg', '河北廊坊1号仓', '2号货架', NULL, NULL);
 INSERT INTO `material` VALUES (14, '123456', '水杯', '123456', 'yaga', 5, NULL, '2024-03-22 00:00:00', '2024-03-22 19:14:04', 'admin', 'admin', 'mina', '123456', '山东省济南市章丘区', '山东省济南市槐荫区', '4kg', '济南章丘1号仓', '2号货架', NULL, NULL);
+INSERT INTO `material` VALUES (15, '1', '1', NULL, NULL, NULL, NULL, '2024-03-29 15:21:26', '2024-03-29 15:21:26', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for onl_cgform_button
@@ -769,7 +770,7 @@ CREATE TABLE `plan1`  (
 -- ----------------------------
 -- Records of plan1
 -- ----------------------------
-INSERT INTO `plan1` VALUES (7, '陆运', NULL, NULL, NULL, NULL, NULL, '1111111111', NULL, NULL, NULL, NULL, '11111111', '1111111111', NULL, NULL, '2024-03-01 00:00:00', 0, NULL, NULL, NULL, '123456', '1111111111111', 1, 1111.00, NULL, NULL, NULL, NULL, NULL, '111111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1111111111111', 1, '2024-03-24 00:00:00', '2024-03-24 14:57:24', 'admin', 'admin', '0', NULL, NULL, NULL, NULL);
+INSERT INTO `plan1` VALUES (7, '陆运', NULL, NULL, NULL, NULL, NULL, '1111111111', NULL, NULL, NULL, NULL, '11111111', '1111111111', NULL, NULL, '2024-03-01 00:00:00', 0, NULL, NULL, NULL, '123456', '1111111111111', 1, 1111.00, NULL, NULL, NULL, NULL, NULL, '111111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1111111111111', 1, '2024-03-24 00:00:00', '2024-03-29 13:10:54', 'admin', 'admin', '0', NULL, NULL, NULL, NULL);
 INSERT INTO `plan1` VALUES (8, '陆运', NULL, NULL, NULL, NULL, NULL, '2222222222222222222222222222222222222222222222', NULL, NULL, NULL, NULL, '222222', '22222222222222222222222222222222222222222222', NULL, NULL, '2024-03-02 00:00:00', 1, NULL, NULL, NULL, '123457', '222222222222', 4, 2222222.00, NULL, NULL, NULL, NULL, NULL, '2222222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2222222222222222222222222222', 1, '2024-03-24 00:00:00', '2024-03-24 14:53:32', 'admin', 'admin', '0', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
@@ -778,37 +779,37 @@ INSERT INTO `plan1` VALUES (8, '陆运', NULL, NULL, NULL, NULL, NULL, '22222222
 DROP TABLE IF EXISTS `plan2`;
 CREATE TABLE `plan2`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '计划表2id',
-  `plan_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `plan_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `site` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '发布人',
-  `equipment_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `equipment_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `project_no` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '公告标题',
-  `retired_asset_no` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `capacity` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `model` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `asset_status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `retired_asset_no` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `capacity` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `model` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `asset_status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `retired_date` datetime(0) NULL DEFAULT NULL COMMENT '发布时间',
-  `receipt_is` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `the_location` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `disposal_way` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `asset_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `project_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `equipment_owners` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `address` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `note` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `equipment_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `disposed` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `receipt_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `already_deliver_storage` decimal(4, 2) NULL DEFAULT NULL COMMENT '',
-  `already_receiving_storage` decimal(4, 2) NULL DEFAULT NULL COMMENT '',
-  `send_orders_state` int(11) NULL DEFAULT 0 COMMENT '',
+  `receipt_is` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `the_location` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `disposal_way` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `asset_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `project_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `equipment_owners` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `address` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `note` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `equipment_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `disposed` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `receipt_no` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `already_deliver_storage` decimal(4, 2) NULL DEFAULT NULL,
+  `already_receiving_storage` decimal(4, 2) NULL DEFAULT NULL,
+  `send_orders_state` int(11) NULL DEFAULT 0,
   `complete_state` int(11) NULL DEFAULT 0 COMMENT '时效状态',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `create_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人',
   `update_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '更新人',
-  `backup1` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '',
+  `backup1` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
   `backup2` varchar(5000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '公告内容',
-  `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -826,41 +827,41 @@ INSERT INTO `plan2` VALUES (6, NULL, 'test', NULL, 'test', NULL, NULL, NULL, NUL
 DROP TABLE IF EXISTS `plan3`;
 CREATE TABLE `plan3`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '计划表3id',
-  `plan_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `plan_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `project_no` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '留言用户',
   `eng_name` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '留言内容',
   `pro_apply_no` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '回复内容1',
   `pro_theorder_no` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '回复用户1',
-  `lineitem_no` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `material_code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `material_describe` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `measuring_unit` int(11) NULL DEFAULT NULL COMMENT '',
+  `lineitem_no` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `material_code` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `material_describe` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `measuring_unit` int(11) NULL DEFAULT NULL,
   `supplier` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '回复用户2',
   `num` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `project_manager` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `m_phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `project_manager` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `m_phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `company_name` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '回复内容2',
-  `field_consignee` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `date_of_arrival` datetime(0) NULL DEFAULT NULL COMMENT '',
-  `construction_organization` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `main_contractor` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `c_phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `feedback` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `field_consignee` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `date_of_arrival` datetime(0) NULL DEFAULT NULL,
+  `construction_organization` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `main_contractor` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `c_phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `feedback` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `construction_time` datetime(0) NULL DEFAULT NULL COMMENT '留言日期',
   `start_time` datetime(0) NULL DEFAULT NULL COMMENT '回复日期1',
   `stop_time` datetime(0) NULL DEFAULT NULL COMMENT '回复日期2',
   `note` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
-  `instructions` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `already_deliver_storage` decimal(4, 2) NULL DEFAULT NULL COMMENT '',
-  `already_receiving_storage` decimal(4, 2) NULL DEFAULT NULL COMMENT '',
-  `send_orders_state` int(11) NULL DEFAULT 0 COMMENT '',
+  `instructions` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `already_deliver_storage` decimal(4, 2) NULL DEFAULT NULL,
+  `already_receiving_storage` decimal(4, 2) NULL DEFAULT NULL,
+  `send_orders_state` int(11) NULL DEFAULT 0,
   `complete_state` int(11) NULL DEFAULT 0 COMMENT '解决状态',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `create_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人',
   `update_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '更新人',
-  `backup1` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '',
+  `backup1` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
   `backup2` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup3` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -1057,7 +1058,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1711261221728', 1711263626625, 10000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1711772976648', 1711773130530, 10000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -1215,11 +1216,12 @@ CREATE TABLE `send_orders`  (
   `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of send_orders
 -- ----------------------------
+INSERT INTO `send_orders` VALUES (3, 1, NULL, NULL, NULL, '7', 1, '2024-03-29 00:00:00', '11111111', '2024-03-29 13:10:54', NULL, 'admin', NULL, NULL, '3', '1', '2', NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for send_orders_subtabulation
@@ -1245,11 +1247,13 @@ CREATE TABLE `send_orders_subtabulation`  (
   `backup8` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup9` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单-车辆-员工关系表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '派单-车辆-员工关系表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of send_orders_subtabulation
 -- ----------------------------
+INSERT INTO `send_orders_subtabulation` VALUES (5, 3, 0, '鲁R12345', '2024-03-29 00:00:00', '2024-03-29 13:10:54', NULL, 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `send_orders_subtabulation` VALUES (6, 3, 1, '1743201213632909313', '2024-03-29 00:00:00', '2024-03-29 13:10:54', NULL, 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for storage_location
@@ -1271,7 +1275,7 @@ CREATE TABLE `storage_location`  (
   `backup4` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库位表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '库位表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of storage_location
@@ -1870,17 +1874,6 @@ CREATE TABLE `sys_log`  (
 -- ----------------------------
 -- Records of sys_log
 -- ----------------------------
-INSERT INTO `sys_log` VALUES ('1771794129414459393', 2, '计划表3-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan3Controller.queryPageList()', NULL, '  plan3: Plan3(id=null, planType=null, projectNo=null, engName=null, proApplyNo=null, proTheorderNo=null, lineitemNo=null, materialCode=null, materialDescribe=null, measuringUnit=null, supplier=null, num=null, projectManager=null, mPhone=null, companyName=null, fieldConsignee=null, dateOfArrival=null, constructionOrganization=null, mainContractor=null, cPhone=null, address=null, feedback=null, constructionTime=null, startTime=null, stopTime=null, note=null, instructions=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 6, 'admin', '2024-03-24 15:00:13', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771794129154412546', 2, '计划表3-编辑', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan3Controller.edit()', NULL, '[{\"backup1\":\"0\",\"companyName\":\"test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，\",\"completeState\":0,\"constructionTime\":1709222400000,\"createBy\":\"admin\",\"createTime\":1711209600000,\"engName\":\"test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，\",\"id\":3,\"note\":\"test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，\",\"proApplyNo\":\"test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，test，\",\"proTheorderNo\":\"test\",\"projectManager\":\"123456\",\"projectNo\":\"test\",\"sendOrdersState\":0,\"startTime\":1709308800000,\"stopTime\":1709395200000,\"supplier\":\"test\",\"updateBy\":\"admin\",\"updateTime\":1711263613390}]', NULL, 5, 'admin', '2024-03-24 15:00:13', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771794072971710466', 2, '计划表3-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan3Controller.queryPageList()', NULL, '  plan3: Plan3(id=null, planType=null, projectNo=null, engName=null, proApplyNo=null, proTheorderNo=null, lineitemNo=null, materialCode=null, materialDescribe=null, measuringUnit=null, supplier=null, num=null, projectManager=null, mPhone=null, companyName=null, fieldConsignee=null, dateOfArrival=null, constructionOrganization=null, mainContractor=null, cPhone=null, address=null, feedback=null, constructionTime=null, startTime=null, stopTime=null, note=null, instructions=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 15, 'admin', '2024-03-24 15:00:00', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771794011290275841', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 13, 'admin', '2024-03-24 14:59:45', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793920630394882', 2, '计划表2-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan2Controller.queryPageList()', NULL, '  plan2: Plan2(id=null, planType=null, site=null, equipmentName=null, projectNo=null, retiredAssetNo=null, capacity=null, model=null, assetStatus=null, retiredDate=null, receiptIs=null, theLocation=null, disposalWay=null, assetNo=null, projectType=null, equipmentOwners=null, address=null, note=null, equipmentNo=null, disposed=null, receiptNo=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 14, 'admin', '2024-03-24 14:59:24', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793902670385153', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 13, 'admin', '2024-03-24 14:59:19', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793897641414657', 2, '计划表2-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan2Controller.queryPageList()', NULL, '  plan2: Plan2(id=null, planType=null, site=null, equipmentName=null, projectNo=null, retiredAssetNo=null, capacity=null, model=null, assetStatus=null, retiredDate=null, receiptIs=null, theLocation=null, disposalWay=null, assetNo=null, projectType=null, equipmentOwners=null, address=null, note=null, equipmentNo=null, disposed=null, receiptNo=null, alreadyDeliverStorage=null, alreadyReceivingStorage=null, sendOrdersState=null, completeState=null, createTime=null, updateTime=null, createBy=null, updateBy=null, backup1=null, backup2=null, backup3=null, backup4=null, backup5=null, beginTime=null, endTime=null)  pageNo: 1  pageSize: 10', NULL, 19, 'admin', '2024-03-24 14:59:18', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793765332094977', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.idsqueryRuList()', NULL, '  ids: 7', NULL, 2, 'admin', '2024-03-24 14:58:47', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793765403398146', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.idsqueryChuList()', NULL, '  ids: 7', NULL, 8, 'admin', '2024-03-24 14:58:47', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793786148425729', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 105, 'admin', '2024-03-24 14:58:52', NULL, NULL);
-INSERT INTO `sys_log` VALUES ('1771793661644705794', 2, '计划表1-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.cable.controller.Plan1Controller.queryPageList()', NULL, '  plan1: Plan1Vo(dateBegin=null, dateEnd=null, warehouseId=null, warehouseName=null, storageLocationId=null, storageLocationName=null, inventoryQuantity=null, plan1Ids=null, operatorSchema=null, receiptNo=null, receiptPhotos=null, taskTime=null, completeOrderList=null, stockNum=null, receivingNum=null, rawMaterial=null)  pageNo: 1  pageSize: 10', NULL, 14, 'admin', '2024-03-24 14:58:22', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_permission
@@ -2381,15 +2374,15 @@ CREATE TABLE `sys_user`  (
   `sex` tinyint(1) NULL DEFAULT NULL COMMENT '性别(0-默认未知,1-男,2-女)',
   `email` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电子邮件',
   `phone` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话',
-  `org_code` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `org_code` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `status` tinyint(1) NULL DEFAULT NULL COMMENT '性别(1-正常,2-冻结)',
   `del_flag` int(10) NULL DEFAULT NULL COMMENT '删除状态（0，正常，1已删除）',
-  `third_id` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `third_type` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
-  `activiti_sync` tinyint(1) NULL DEFAULT NULL COMMENT '',
-  `work_no` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `third_id` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `third_type` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `activiti_sync` tinyint(1) NULL DEFAULT NULL,
+  `work_no` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `post` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '职务，关联职务表',
-  `telephone` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '',
+  `telephone` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `create_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_by` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '更新人',
@@ -2414,7 +2407,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('1743201213632909313', 'User', '姜山', '173a1afaf4f99374', 'X9SKMIP1', NULL, NULL, 2, '123@123.com', '13245678910', NULL, 1, 0, NULL, NULL, 1, NULL, NULL, NULL, 'admin', '2024-01-05 17:22:11', 'admin', '2024-01-05 17:28:29', 1, '2', '3711111111111', NULL, '天桥区', '2024-01-06 00:00:00');
 INSERT INTO `sys_user` VALUES ('1743202602228551682', 'Guest', '曲豪成', '2bc2103737a1e2c7', 'Zfn2h98R', NULL, NULL, 1, '321@321.com', '13254558745', NULL, 1, 0, NULL, NULL, 1, NULL, NULL, NULL, 'admin', '2024-01-05 17:27:42', NULL, NULL, 1, '1', '370000000000000', NULL, '威海市', '2024-01-05 00:00:00');
-INSERT INTO `sys_user` VALUES ('e9ca23d68d884d4ebb19d07889727dae', 'admin', '管理员', 'cb362cfeefbf3d8d', 'RCGTeGiH', 'http://minio.jeecg.com/otatest/temp/lgo33_1583397323099.png', '2018-12-05 00:00:00', 1, '131811588991@163.com', '13181588991', '', 1, 0, NULL, NULL, 1, '00001', '总经理', NULL, NULL, '2038-06-21 00:00:00', 'admin', '2024-01-05 17:29:11', 2, '5', '370000000000000', '2060-01-18 00:00:00', '章丘区', '2024-01-05 00:00:00');
+INSERT INTO `sys_user` VALUES ('e9ca23d68d884d4ebb19d07889727dae', 'admin', '管理员', 'cb362cfeefbf3d8d', 'RCGTeGiH', 'http://minio.jeecg.com/otatest/temp/lgo33_1583397323099.png', '2018-12-05 00:00:00', 1, '131811588991@163.com', '13181588991', '', 1, 0, NULL, NULL, 1, '00001', '总经理', NULL, NULL, '2038-06-21 00:00:00', 'admin', '2024-03-29 13:33:30', 2, '5', '370000000000000', '2060-01-17 00:00:00', '章丘区', '2024-01-05 00:00:00');
 
 -- ----------------------------
 -- Table structure for sys_user_agent
@@ -2502,7 +2495,7 @@ INSERT INTO `sys_user_role` VALUES ('1265523784076255234', '1265456264058941442'
 INSERT INTO `sys_user_role` VALUES ('f2922a38ba24fb53749e45a0c459adb3', '439ae3e9bcf7418583fcd429cadb1d72', '1');
 INSERT INTO `sys_user_role` VALUES ('ee45d0343ecec894b6886effc92cb0b7', '4d8fef4667574b24a9ccfedaf257810c', 'f6817f48af4fb3af11b9e8bf182f618b');
 INSERT INTO `sys_user_role` VALUES ('1265523757287235586', 'a75d45a015c44384a04449ee80dc3503', 'f6817f48af4fb3af11b9e8bf182f618b');
-INSERT INTO `sys_user_role` VALUES ('1267337208645734401', 'e9ca23d68d884d4ebb19d07889727dae', 'f6817f48af4fb3af11b9e8bf182f618b');
+INSERT INTO `sys_user_role` VALUES ('1773584242469412865', 'e9ca23d68d884d4ebb19d07889727dae', 'f6817f48af4fb3af11b9e8bf182f618b');
 
 -- ----------------------------
 -- Table structure for test_demo
@@ -2686,7 +2679,7 @@ CREATE TABLE `warehouse`  (
   `backup4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of warehouse
@@ -2740,5 +2733,3 @@ CREATE TABLE `zhuanyi`  (
 -- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
-
-
