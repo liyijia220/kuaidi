@@ -31,7 +31,7 @@ import java.util.List;
 
 /**
  * @Author scott
- * @since 2018-12-17
+ * @since 2023-12-17
  */
 @Controller
 @RequestMapping("/thirdLogin")
@@ -39,7 +39,7 @@ import java.util.List;
 public class ThirdLoginController {
 	@Autowired
 	private ISysUserService sysUserService;
-	
+
 	@Autowired
 	private ISysBaseAPI sysBaseAPI;
 	@Autowired
@@ -55,7 +55,7 @@ public class ThirdLoginController {
         log.info("第三方登录认证地址：" + authorizeUrl);
         response.sendRedirect(authorizeUrl);
     }
-	
+
 	@RequestMapping("/{source}/callback")
     public String login(@PathVariable("source") String source, AuthCallback callback,ModelMap modelMap) {
 		log.info("第三方登录进入callback：" + source + " params：" + JSONObject.toJSONString(callback));
@@ -64,12 +64,12 @@ public class ThirdLoginController {
         log.info(JSONObject.toJSONString(response));
         Result<JSONObject> result = new Result<JSONObject>();
         if(response.getCode()==2000) {
-        	 
+
         	JSONObject data = JSONObject.parseObject(JSONObject.toJSONString(response.getData()));
         	String username = data.getString("username");
         	String avatar = data.getString("avatar");
         	String uuid = data.getString("uuid");
-        	
+
         	//判断有没有这个人
         	LambdaQueryWrapper<SysUser> query = new LambdaQueryWrapper<SysUser>();
         	query.eq(SysUser::getThirdId, uuid);
@@ -86,7 +86,7 @@ public class ThirdLoginController {
         		user.setAvatar(avatar);
         		user.setUsername(uuid);
         		user.setRealname(username);
-        		
+
         		//设置初始密码
         		String salt = oConvertUtils.randomGen(8);
     			user.setSalt(salt);
@@ -105,20 +105,20 @@ public class ThirdLoginController {
     		// 设置超时时间
     		redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME / 1000);
     		modelMap.addAttribute("token", token);
-    		
+
         }
         result.setSuccess(false);
         result.setMessage("第三方登录异常,请联系管理员");
         return "thirdLogin";
     }
-	
+
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getLoginUser/{token}", method = RequestMethod.GET)
 	@ResponseBody
 	public Result<JSONObject> getLoginUser(@PathVariable("token") String token) throws Exception {
 		Result<JSONObject> result = new Result<JSONObject>();
 		String username = JwtUtil.getUsername(token);
-		
+
 		//1. 校验用户是否有效
 		SysUser sysUser = sysUserService.getUserByName(username);
 		result = sysUserService.checkUserIsEffective(sysUser);
@@ -136,5 +136,5 @@ public class ThirdLoginController {
 		sysBaseAPI.addLog("用户名: " + username + ",登录成功[第三方用户]！", CommonConstant.LOG_TYPE_1, null);
 		return result;
 	}
-	
+
 }

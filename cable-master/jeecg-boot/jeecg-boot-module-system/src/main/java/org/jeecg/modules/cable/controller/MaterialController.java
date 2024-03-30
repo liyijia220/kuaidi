@@ -36,9 +36,9 @@ import io.swagger.annotations.ApiOperation;
 import org.jeecg.common.aspect.annotation.AutoLog;
 
 /**
- * 物料表
+ * 快递表
  */
-@Api(tags = "物料表")
+@Api(tags = "快递表")
 @RestController
 @RequestMapping("/cable/material")
 public class MaterialController extends JeecgController<Material, IMaterialService> {
@@ -52,7 +52,7 @@ public class MaterialController extends JeecgController<Material, IMaterialServi
     private IPlan3Service plan3Service;
 
     /**
-     * 物料数据重复校验方法
+     * 快递数据重复校验方法
      */
     private boolean dataCheck(Object object) {
         Material material = (Material) object;
@@ -61,7 +61,7 @@ public class MaterialController extends JeecgController<Material, IMaterialServi
     }
 
     /**
-     * 物料出入库台账
+     * 快递出入库台账
      */
     @AutoLog(value = "物料出入库台账")
     @ApiOperation(value = "物料出入库台账", notes = "物料出入库台账")
