@@ -43,7 +43,7 @@
 - 配置 redis 连接信息
 - 配置 jeecg 专用配置文件上传路径
 - 找到 JeecgApplication 启动类启动项目即可
-- 通过访问 `http://localhost:8080/jeecg-boot/` 可以查看后台 API 接口文档
+- 通过访问 `http://localhost:8080/jeecg-boot/` 可以查看后台 API 接口文档（开发者查看）
 
 # 3. 前端配置
 - 前端项目使用 VsCode 工具打开，在控制台执行 `npm install` 命令下载所需依赖

@@ -1,0 +1,81 @@
+@startuml
+skinparam rectangle {
+    BackgroundColor PaleGreen
+    BorderColor Black
+    Shadowing true
+}
+skinparam database {
+    BackgroundColor Gold
+}
+skinparam node {
+    BackgroundColor SkyBlue
+}
+
+rectangle "前端应用层" {
+    node "用户界面" as UI {
+        rectangle "用户操作" {
+            [登录]
+            [注册]
+            [查询数据]
+            [提交数据]
+        }
+    }
+    node "数据处理" as DataProc {
+        rectangle "数据验证" {
+            [检查输入]
+            [格式化数据]
+        }
+        rectangle "请求构建" {
+            [构建API请求]
+            [设置请求头]
+        }
+    }
+}
+
+rectangle "后端应用层" {
+    node "API控制器" as API {
+        rectangle "请求接口" {
+            [接收请求]
+            [解析请求]
+        }
+        rectangle "业务逻辑处理" {
+            [逻辑判断]
+            [数据加工]
+        }
+        rectangle "响应构建" {
+            [创建响应数据]
+            [设置响应状态]
+        }
+    }
+    node "服务层" as Service {
+        rectangle "业务服务" {
+            [处理业务]
+            [调用数据服务]
+        }
+    }
+    node "数据访问层" as DAO {
+        rectangle "数据库交互" {
+            [CRUD操作]
+            [连接管理]
+        }
+    }
+}
+
+database "数据库" {
+    [用户数据]
+    [业务数据]
+    [日志数据]
+}
+
+' 连接
+UI --> DataProc : 发送数据
+DataProc --> API : 请求API
+API --> Service : 调用服务
+Service --> DAO : 数据操作
+DAO --> database : 存取数据
+database --> DAO : 返回数据
+DAO --> Service : 数据结果
+Service --> API : 业务结果
+API --> UI : 响应结果
+
+@enduml

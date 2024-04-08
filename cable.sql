@@ -11,7 +11,7 @@
  Target Server Version : 50744
  File Encoding         : 65001
 
- Date: 30/03/2024 14:02:05
+ Date: 08/04/2024 11:45:28
 */
 
 SET NAMES utf8mb4;
@@ -379,7 +379,6 @@ CREATE TABLE `material`  (
 -- ----------------------------
 INSERT INTO `material` VALUES (13, '123457', '羽绒服', '123456789', '222', 3, NULL, '2024-03-22 00:00:00', '2024-03-22 20:21:23', 'admin', 'admin', '333', '1234567891', '山东省菏泽市', '山东省日照市东港区', '3kg', '河北廊坊1号仓', '2号货架', NULL, NULL);
 INSERT INTO `material` VALUES (14, '123456', '水杯', '123456', 'yaga', 5, NULL, '2024-03-22 00:00:00', '2024-03-22 19:14:04', 'admin', 'admin', 'mina', '123456', '山东省济南市章丘区', '山东省济南市槐荫区', '4kg', '济南章丘1号仓', '2号货架', NULL, NULL);
-INSERT INTO `material` VALUES (15, '1', '1', NULL, NULL, NULL, NULL, '2024-03-29 15:21:26', '2024-03-29 15:21:26', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for onl_cgform_button
@@ -1058,7 +1057,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1711772976648', 1711773130530, 10000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'AMD1712547479931', 1712547925005, 10000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -2679,7 +2678,7 @@ CREATE TABLE `warehouse`  (
   `backup4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `backup5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '仓库表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of warehouse
