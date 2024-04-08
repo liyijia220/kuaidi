@@ -1,0 +1,12 @@
+@startuml
+
+!define table(x) entity x
+skinparam linetype ortho
+
+qrtz_triggers ||--oSCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP : contains
+qrtz_triggers ||--oSCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP : contains
+qrtz_triggers ||--oSCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP : contains
+qrtz_triggers ||--oSCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP : contains
+qrtz_job_details ||--oSCHED_NAME, JOB_NAME, JOB_GROUP : contains
+
+@enduml
